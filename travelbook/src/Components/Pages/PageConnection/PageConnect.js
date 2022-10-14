@@ -5,7 +5,8 @@ import Register from './Register';
 function PageConnect() {
 const [register,setRegister] = useState ([{email:"",password:"",firstname:"",lastname:""}]) 
 console.log(register);
-function updateLogin(email, password, firstname, lastname, index){
+
+function updateRegister(email, password, firstname, lastname, index){
     register[index] = [{email, password, firstname, lastname}];
     setRegister([...register]);
 }
@@ -13,7 +14,7 @@ function updateLogin(email, password, firstname, lastname, index){
       <div className="PageConnect">
 
 
-{register.map((email,password,firstname,lastname,index)=> (<Register key={index} index={index} email={email}  password={password}  firstname={firstname} lastanme={lastname} update={updateLogin} />
+{register.map((email,password,firstname,lastname,index)=> (<Register key={index} index={index} email={email}  password={password}  firstname={firstname} lastanme={lastname} update={updateRegister} />
 ))}
 
 

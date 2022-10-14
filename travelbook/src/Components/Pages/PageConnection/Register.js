@@ -1,8 +1,8 @@
 import './Register.css'
 
-function Register({email,password,firstname, lastname, update, index}){
+function Register(email,password,firstname, lastname, update, index){
  
-      
+ 
     async function newRegister() {
         
         const options = {
@@ -11,11 +11,13 @@ function Register({email,password,firstname, lastname, update, index}){
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+
                 email: email,
                 password: password,
                 firstname: firstname,
                 lastname: lastname
-            })
+            }
+                )
         }
         
         const response =await fetch("https://social-network-api.osc-fr1.scalingo.io/travelbook/register", options);
@@ -23,24 +25,14 @@ function Register({email,password,firstname, lastname, update, index}){
 const data =await response.json();
 console.log(data);
 }
-function data() {
-    
-    return ({
-      email: "test@test.com",
-      password: "test",
-      result: null,
-      token: "",
-    });
+
+newRegister();
+
+function HandleClick(e){
+    e.preventDefault();
+   
 }
 
-newRegister(data);
-function handleChange1(e){
-    update(e.target.value,index);
-}
-
-function handleChange2(e){
-    update(e.target.password,index);
-}
 return (
     <div className="Register">
 
@@ -49,46 +41,45 @@ return (
    <h2> Veuillez vous enregistrer</h2>
    <label htmlFor="firstnameInput"> Votre Prénom </label>
         <input
-          /* type="email" */
+          type="text"
           id="firstnameInput"
           /* autoComplete="username" */
           placeholder="Christophe"
-          firstname={firstname}
-          onChange={handleChange1}
+      /*     firstname={firstname} */
+          
           />
 
 <label htmlFor="lastnameInput"> Votre Nom </label>
         <input
-          /* type="email" */
+          type="text"
           id="lastnameInput"
           /* autoComplete="username" */
           placeholder="Colomb"
-          lastname={lastname}
-          onChange={handleChange1}
+         /*  lastname={lastname} */
+         
           />
     
         <label htmlFor="emailInput"> Votre Email </label>
         <input
-          /* type="email" */
+          type="email"
           id="emailInput"
           /* autoComplete="username" */
           placeholder="c.colomb@travelbook.fr"
-          email={email}
-          onChange={handleChange1}
+         /*  email={email} */
           />
   
 
         <label htmlFor="passwordInput"> Votre mot de passe </label>
         <input
-          /* type="password" */
+          type="password"
           /* autoComplete="current-password" */
           id="passwordInput"
           placeholder="******"
-          password={password}
-          onChange={handleChange2}
+       /*    password={password.value}
+         */
           />
 
-      <input type="submit" value="Se connecter" />
+      <input type="submit" onClick={HandleClick} value="Se connecter" />
 
           </form>
 
