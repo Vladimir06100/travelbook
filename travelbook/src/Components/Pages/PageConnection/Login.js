@@ -1,39 +1,42 @@
 
-async function Login({email,password,update, index}) {
-     
-    const options = {
-method : "POST",
-headers: {
-    "Content-Type": "application/json"
-},
-body: JSON.stringify({
-    email : email,
-    password: password
-})
-     }
+function Login({email,password,update, index}){
 
-const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/demo/login", options);
-
+    async function newLogin() {
+        
+        const options = {
+            method : "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email : email,
+                password: password
+            })
+        }
+        
+        const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/demo/register", options);
+        
 const data =await response.json();
 console.log(data);
-
+}
+newLogin();
 function handleChange1(e){
-update(e.target.email,index);
+    update(e.target.email,index);
 }
 
 function handleChange2(e){
     update(e.target.password,index);
-    }
-    return (
-      <div className="Login">
+}
+return (
+    <div className="Login">
 
    <form className="form-login">
     
         <label htmlFor="emailInput"> Votre identifiant Email </label>
         <input
-          type="email"
+          /* type="email" */
           id="emailInput"
-          autoComplete="username"
+          /* autoComplete="username" */
           placeholder="c.colomb@travelbook.fr"
           email={email}
           onChange={handleChange1}
@@ -42,8 +45,8 @@ function handleChange2(e){
 
         <label htmlFor="passwordInput"> Votre mot de passe </label>
         <input
-          type="password"
-          autoComplete="current-password"
+          /* type="password" */
+          /* autoComplete="current-password" */
           id="passwordInput"
           placeholder="******"
           password={password}
@@ -57,7 +60,8 @@ function handleChange2(e){
 
       </div>
     );
-  }
-  
-  export default Login;
+
+
+}
+export default Login;
 

@@ -1,0 +1,22 @@
+.Register{
+    display: flex;
+    background: linear-gradient(#e66465, #9198e5);
+    align-items: center;
+    padding: 5%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form.form-register{
+
+text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    background: white;
+    border: 2px solid;
+    border-radius: 2rem;
+    padding: 1%;
+
+}
