@@ -5,12 +5,14 @@ import Profil from "./Components/Pages/PageMain/profil/Profil";
 import './App.css';
 import PageMain from "./Components/Pages/PageMain/PageMain";
 import EditProfil from "./Components/Pages/PageMain/profil/EditProfil";
+import PostsTest from "./Components/Elements/PostsTest";
+import { useState } from "react";
 const router = createBrowserRouter([
 
 
   {
     path: "/",
-    element: <PageMain/>,
+    element: <PageConnect/>,
     error: <PageErreur />
   },
 
@@ -35,10 +37,25 @@ const router = createBrowserRouter([
 
 
 function App() {
+
+
+
   return (
     <div className="App">
- <RouterProvider router={router} /><PageConnect />
+ <RouterProvider router={router}/>
+    
+   
+
+  
+  
+    
+    
+    
     </div>
+
+
+
+
   );
 }
 
