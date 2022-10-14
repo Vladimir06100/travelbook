@@ -1,11 +1,29 @@
-function Profil() {
+import {Link} from 'react-router-dom'; 
 
-    async function Test(){
 
-        let response = await fetch("https://social-networkapi.osc-fr1.scalingo.io/travelbook/ ")
-        console.log(response);
-    }
-Test();
+function Profil (){
+
+return(
+
+    <div>
+        
+        
+       
+    <nav>
+
+    <Link to="/pagemain">Accueil</Link>
+    <Link to="/editprofil">Edit Monprofil</Link>
+
+    <h2>Mon profil</h2>
+    
+            </nav>
+
+            </div>
+
+)
+
+
 }
 
-export default Profil;
+
+export default Profil; 
