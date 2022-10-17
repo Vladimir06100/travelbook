@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageConnect from "./Components/Pages/PageConnection/PageConnect";
+import PageRegister from "./Components/Pages/PageConnection/PageRegister";
 import PageErreur from "./Components/Elements/pageErreur";
 import Profil from "./Components/Pages/PageMain/profil/Profil";
-import './App.css';
 import PageMain from "./Components/Pages/PageMain/PageMain";
-import PostsTest from "./Components/Elements/PostsTest";
+/* import PostsTest from "./Components/Elements/PostsTest"; */
 
 
 const router = createBrowserRouter([
@@ -17,9 +17,9 @@ const router = createBrowserRouter([
 		path: "/Register",
 		element: <PageRegister />,
 	},
-	/*   {
+	{
     path: "/pagemain",
-    element: <PageMain/>,
+    element: <PageMain />,
     error: <PageErreur />
   },
   {
@@ -30,22 +30,16 @@ const router = createBrowserRouter([
 
 
 ]);
-//
+
 
 function App() {
 
 
-// creation variable detat token
-//creation variable router, je donne mo ncomposant login la fonction de mise a jour de token.
+/* reation variable detat token
+creation variable router, je donne mo ncomposant login la fonction de mise a jour de token. */
   return (
     <div className="App">
  <RouterProvider router={router}/>
-    
- 
-
-  
-  
-    
     
     
     </div>

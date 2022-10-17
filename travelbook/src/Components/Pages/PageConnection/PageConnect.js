@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "./UI/Button";
 import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
+
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -25,7 +26,8 @@ const Login = () => {
 			options
 		);
 		console.log(response);
-		localStorage.setItem(email, password);
+		const data = await response.json();
+		localStorage.setItem("token", data.token);
 
 		if (response.ok) {
 			const successMsg = console.log("User registered successfully!");
