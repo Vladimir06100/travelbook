@@ -8,15 +8,16 @@ import PostsTest from "./Components/Elements/PostsTest";
 
 
 const router = createBrowserRouter([
-
-
-  {
-    path: "/",
-    element: <PageConnect/>,
-    error: <PageErreur />
-  },
-
-  {
+	{
+		path: "/",
+		element: <PageConnect />,
+		/* error: <PageErreur /> */
+	},
+	{
+		path: "/Register",
+		element: <PageRegister />,
+	},
+	/*   {
     path: "/pagemain",
     element: <PageMain/>,
     error: <PageErreur />
