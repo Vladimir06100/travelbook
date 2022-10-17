@@ -4,7 +4,6 @@ import PageErreur from "./Components/Elements/pageErreur";
 import Profil from "./Components/Pages/PageMain/profil/Profil";
 import './App.css';
 import PageMain from "./Components/Pages/PageMain/PageMain";
-import EditProfil from "./Components/Pages/PageMain/profil/EditProfil";
 import PostsTest from "./Components/Elements/PostsTest";
 
 
@@ -28,19 +27,15 @@ const router = createBrowserRouter([
     error: <PageErreur />
   },
 
-  {
-    path: "/editprofil",
-    element: <EditProfil/>,
-    error: <PageErreur />
-  },
 
 ]);
-
+//
 
 function App() {
 
 
-
+// creation variable detat token
+//creation variable router, je donne mo ncomposant login la fonction de mise a jour de token.
   return (
     <div className="App">
  <RouterProvider router={router}/>
@@ -55,3 +50,4 @@ function App() {
     </div>
   )
 }
+export default App;
