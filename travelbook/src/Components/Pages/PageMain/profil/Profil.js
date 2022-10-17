@@ -12,7 +12,7 @@ return(
     <nav>
 
     <Link to="/pagemain">Accueil</Link>
-    <Link to="/editprofil">Edit Monprofil</Link>
+    <Link to="/editprofil">Editer mon profil</Link>
 
     <h2>Mon profil</h2>
     

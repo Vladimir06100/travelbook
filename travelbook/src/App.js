@@ -3,6 +3,10 @@ import PageConnect from "./Components/Pages/PageConnection/PageConnect";
 //import PageErreur from "./Components/Elements/pageErreur";
 //import Profil from "./Components/Pages/PageMain/profil/Profil";
 import './App.css';
+import PageMain from "./Components/Pages/PageMain/PageMain";
+import EditProfil from "./Components/Pages/PageMain/profil/EditProfil";
+import PostsTest from "./Components/Elements/PostsTest";
+import { useState } from "react";
 
 const router = createBrowserRouter([
 
@@ -39,7 +43,16 @@ function App() {
 
   return (
     
- <RouterProvider router={router} />
+ 
+
+  
+  
+    
+    
+    
+    </div>
+
+
 
  
 

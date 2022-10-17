@@ -1,20 +1,17 @@
-import {Link} from 'react-router-dom'; 
-import PostsTest from '../../Elements/PostsTest';
 
+import PostsTest from '../../Elements/PostsTest';
+import Menu from './Menu';
 function PageMain (){
 
     const listeArticles= [{'title':'Article1','details':'Un paragraphe est une section de texte en prose vouée au développement'},{'title':'Article2','details':'Un paragraphe est une section de texte en prose vouée au développement',},{'title':'Article3','details':'Un paragraphe est une section de texte en prose vouée au développement',}]
 
     return(
         <div>
-        <nav>
+ 
 
-<Link to="/pagemain">Accueil</Link>
-<Link to="/profil">Mon profil</Link>
+        <Menu/>
 
-        </nav>
-
-        <h2>Page principal</h2>
+        <h2>Page principale</h2>
 
 
         {

@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import AjoutCom from "../Pages/PageMain/AjoutCom";
 
 function PostsTest (props){
 
@@ -10,9 +10,7 @@ const likeUnlike = ()=>{
     setLikes(!Likes)
 
 };
-    
-    const [rango, setRango]=useState("");
-    
+  
     
     
 
@@ -24,17 +22,10 @@ const likeUnlike = ()=>{
             
 <h1>{props.title}</h1>
 <p>{props.details}</p>
-<p>{Likes ? "J'aime" : "Je n'aime pas"}</p>
-<button onClick={likeUnlike}>Like</button>
-        <p>{rango}</p>
-<input
-          type="text"
-          onChange={(ev)=>setRango(ev.target.value)}
-          placeholder="comment cet article"
-          
-          />
+<button onClick={likeUnlike}>{Likes ? <span>💓</span> : <span>💔</span>}</button>
+       
 
-
+            <AjoutCom/>
 
         </div>
 
