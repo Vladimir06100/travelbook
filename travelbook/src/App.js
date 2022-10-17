@@ -1,19 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageConnect from "./Components/Pages/PageConnection/PageConnect";
+import PageRegister from "./Components/Pages/PageConnection/PageRegister";
 //import PageErreur from "./Components/Elements/pageErreur";
 //import Profil from "./Components/Pages/PageMain/profil/Profil";
-import './App.css';
 
 const router = createBrowserRouter([
-
-
-  {
-    path: "/",
-    element: <PageConnect />,
-    /* error: <PageErreur /> */
-  },
-
-/*   {
+	{
+		path: "/",
+		element: <PageConnect />,
+		/* error: <PageErreur /> */
+	},
+	{
+		path: "/Register",
+		element: <PageRegister />,
+	},
+	/*   {
     path: "/pagemain",
     element: <PageMain/>,
     error: <PageErreur />
@@ -29,21 +30,10 @@ const router = createBrowserRouter([
     element: <EditProfil/>,
     error: <PageErreur />
   }, */
-
 ]);
 
-
 function App() {
-
-
-
-  return (
-    
- <RouterProvider router={router} />
-
- 
-
-  );
+	return <RouterProvider router={router} />;
 }
 
 export default App;
