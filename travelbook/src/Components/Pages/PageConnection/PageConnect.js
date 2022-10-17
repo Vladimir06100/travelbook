@@ -2,6 +2,11 @@ import { useState } from "react";
 import Button from "./UI/Button";
 import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
+import Header from "../ElementsPage/Header";
+import Footer from "../ElementsPage/Footer";
+import Menu from "../ElementsPage/Menu";
+
+import "./PageConnect.css";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -36,42 +41,54 @@ const Login = () => {
 		}
 	}
 	return (
-		<>
-			<section className={classes.Login}>
-				<h1>TravelBook</h1>
-				<h1>Connecter Vous</h1>
-				<form onSubmit={handleSubmit}>
-					<div className={classes.control}>
-						<label htmlFor="email">Votre Email</label>
-						<input
-							type="email"
-							id="email"
-							onChange={(e) => setEmail(e.target.value)}
-							required
-						/>
-					</div>
-					<div className={classes.control}>
-						<label htmlFor="password">Votre Pass</label>
-						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-						<input
-							type="text"
-							id="password"
-							onChange={(e) => setPassword(e.target.value)}
-							required
-						/>
-					</div>
-					<div className={classes.actions}>
-						{/* <button type="button" onClick={() => {}}>
+		<div className="Visuel">
+			<section className="SectionHeader">
+				<Header />
+			</section>
+			<div className="PartieCentre">
+				<section className="SectionMenu">
+					<Menu />
+				</section>
+
+				<section className="SectionMain">
+					<h1>TravelBook</h1>
+					<h1>Connecter Vous</h1>
+					<form onSubmit={handleSubmit}>
+						<div className={classes.control}>
+							<label htmlFor="email">Votre Email</label>
+							<input
+								type="email"
+								id="email"
+								onChange={(e) => setEmail(e.target.value)}
+								required
+							/>
+						</div>
+						<div className={classes.control}>
+							<label htmlFor="password">Votre Pass</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setPassword(e.target.value)}
+								required
+							/>
+						</div>
+						<div className={classes.actions}>
+							{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}
-						<Button type={"submit"} onClick={() => {}}>
-							Se connecter
-						</Button>
-						<Link to="/Register">Enregistrer</Link>
-					</div>
-				</form>
+							<Button type={"submit"} onClick={() => {}}>
+								Se connecter
+							</Button>
+							<Link to="/Register">Enregistrer</Link>
+						</div>
+					</form>
+				</section>
+			</div>
+			<section className="SectionFooter">
+				<Footer />
 			</section>
-		</>
+		</div>
 	);
 };
 
