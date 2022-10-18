@@ -10,11 +10,11 @@ function PostsTest(props) {
 	const [rango, setRango] = useState("");
 
 	return (
-		<div>
+		<div className="Article">
 			<h1>{props.title}</h1>
 			<p>{props.details}</p>
 			<p>{Likes ? "J'aime" : "Je n'aime pas"}</p>
-			<button onClick={likeUnlike}>Like</button>
+			<button className="BtnLike" onClick={likeUnlike}>Like</button>
 			<p>{rango}</p>
 			<input
 				type="text"

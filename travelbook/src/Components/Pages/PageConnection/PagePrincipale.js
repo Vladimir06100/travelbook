@@ -1,5 +1,3 @@
-//import { useState } from "react";
-//import { useNavigate } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
