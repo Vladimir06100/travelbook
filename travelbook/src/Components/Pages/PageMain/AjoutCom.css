@@ -1,46 +1,7 @@
+textarea{
+
+    resize: none;
+}
 
 
-.maincontainer{
 
-         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 10px;
-        }
-
-        .inputbox{
-
-            height: 75px;
-            width: 350px;
-            background-color: white;
-
-        }
-        .commentbutton{
-
-            height: 40px;
-            width: 80px;
-            background-color: blue;
-            color: white;
-            margin-top: 10px;
-            border-radius: 5px;
-            border-style: none;
-
-        }
-
-        .commentcontainer{
-
-            
-            height: 75px;
-            width: 350px;
-            background-color: rgb(249, 171, 171);
-            word-break: break-all;
-            margin: 10px 0;
-
-        }
-
-        .btnmodify{
-
-         
-
-        }
