@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
+import { useNavigate } from "react-router-dom";
 import "./PageConnect.css";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
 	// остановка обновления страницы
 	async function handleSubmit(e) {
@@ -32,9 +34,12 @@ const Login = () => {
 		localStorage.setItem("token", data.token);
 
 		if (response.ok) {
-			const successMsg = console.log("User registered successfully!");
+			navigate(`/PagePrincipale`);
+			const successMsg = console.log("Connecter!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
+		} else {
+			alert("Compte n’existe pas!!!");
 		}
 	}
 	return (
@@ -64,7 +69,7 @@ const Login = () => {
 							<label htmlFor="password">Votre Pass</label>
 							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
-								type="text"
+								type="password"
 								id="password"
 								onChange={(e) => setPassword(e.target.value)}
 								required
@@ -77,6 +82,9 @@ const Login = () => {
 							<div>
 								<button type={"submit"} onClick={() => {}}>
 									Se connecter
+									{/* <Link className="LinkMain" to="/Principale">
+										Enregistrer
+									</Link> */}
 								</button>
 							</div>
 							<div>
