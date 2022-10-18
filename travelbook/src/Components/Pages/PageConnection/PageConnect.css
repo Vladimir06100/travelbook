@@ -9,7 +9,7 @@
   justify-content: space-around;
 }
 .SectionMain{
-  background-image: url("/Users/vladimirsinkevitch/Desktop/DEV/REACT_Bocal/travelbook/travelbook/src/Components/Elements/getty_583734066_335273.jpeg");
+  background-image: url("../../Elements/getty_583734066_335273.jpeg");
   background-position: center; 
   border: 1px solid black;
   text-align: center;

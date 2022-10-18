@@ -23,11 +23,11 @@ const router = createBrowserRouter([
 		element: <PagePrincipale />,
 		error: <PageErreur />,
 	},
-	/* {
+	/*  {
     path: "/profil",
     element: <Profil/>,
     error: <PageErreur />
-  },
+  }, */
 
 
 ]);
@@ -45,5 +45,5 @@ creation variable router, je donne mo ncomposant login la fonction de mise a jou
     
     </div>
   )
-}
+  }
 export default App;
