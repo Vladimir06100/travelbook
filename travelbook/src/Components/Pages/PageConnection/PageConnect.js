@@ -32,16 +32,20 @@ const Login = () => {
 		console.log(response);
 		const data = await response.json();
 		localStorage.setItem("token", data.token);
+		const successMsg = data.success;
 
-		if (response.ok) {
+		if (successMsg === true) {
 			navigate(`/PagePrincipale`);
 			const successMsg = console.log("Connecter!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
 		} else {
-			alert("Compte n’existe pas!!!");
+			alert(
+				"Compte n’existe pas!!!\n Ou Votre EMAIL est erronée \n Ou Votre mot de passe erronée"
+			);
 		}
 	}
+
 	return (
 		<div className="Visuel">
 			<section className="SectionHeader">
