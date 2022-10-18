@@ -1,73 +1,47 @@
-import {Link} from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 import {useState} from 'react';
 
+function Profil() {
+	async function getProfil() {
+		const token = localStorage.getItem("token");
+		const options = {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `bearer ${token}`,
+			},
+		};
 
-function Profil (){
+		const response = await fetch(
+			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/user",
+			options
+		);
 
-    async function getProfil() {
+		const data = await response.json();
 
-        
-        const token = localStorage.getItem("token");
-        const options = {
-            method : "GET",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `bearer ${token}`
-            }
-            
-        }
-        
-        const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/TravelBook/user", options);
-        
-        const data =await response.json();
+		console.log(data.lastname);
+	}
 
-    console.log(data.lastname)
+	getProfil();
 
-    }
+	/* const nom = localStorage.getItem("lastname", data.lastname); */
 
-    getProfil();
+	/*     
+    const profil = JSON.stringify(data, lastname) */
+	return (
+		<div>
+			<nav>
+				<Link to="/pagemain">Accueil</Link>
+				<Link to="/editprofil">Éditer mon profil</Link>
+			</nav>
 
-/*    const [profil,setProfil] = useState({lastname : "lastname"});
-    console.log(profil);
-	const [viewProfil,setViewProfil] = useState(""); 
+			<h2>Mon profil</h2>
 
-    function viewProfilperso(){
-
-    profil.push(viewProfil);
-
-    setProfil(profil);
-    } */
-
-    return(
-
-    <div>
-        
-    
-    
-        
-     
-    <nav>
-
-    <Link to="/PagePrincipale">Accueil</Link>
-    <Link to="/editprofil">Editer mon profil</Link>
-
-    </nav>
-    
-    <h2>Mon profil</h2>
-
-<section>
-  
-  <p onChange={viewProfilperso}> votre nom est : {profil} </p>
-
-</section>
-
-
-            </div>
-
-)
-
-
+			<section>
+				<p> votre nom est : </p>
+			</section>
+		</div>
+	);
 }
 
-
-export default Profil; 
+export default Profil;
