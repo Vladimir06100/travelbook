@@ -1,5 +1,6 @@
 
 import PostsTest from '../../Elements/PostsTest';
+import CreatePost from './CreatePost';
 import Menu from './Menu';
 function PageMain (){
 
@@ -13,6 +14,7 @@ function PageMain (){
 
         <h2>Page principale</h2>
 
+<CreatePost />
 
         {
     listeArticles.map(article => {
