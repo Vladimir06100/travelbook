@@ -1,11 +1,8 @@
 import { useState } from "react";
-import Button from "./UI/Button";
-import classes from "./Login.module.css";
 import { Link } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-
 import "./PageConnect.css";
 
 const Login = () => {
@@ -54,7 +51,7 @@ const Login = () => {
 					<h1>TravelBook</h1>
 					<h1>Connecter Vous</h1>
 					<form onSubmit={handleSubmit}>
-						<div className={classes.control}>
+						<div className="">
 							<label htmlFor="email">Votre Email</label>
 							<input
 								type="email"
@@ -63,7 +60,7 @@ const Login = () => {
 								required
 							/>
 						</div>
-						<div className={classes.control}>
+						<div>
 							<label htmlFor="password">Votre Pass</label>
 							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
@@ -73,14 +70,20 @@ const Login = () => {
 								required
 							/>
 						</div>
-						<div className={classes.actions}>
+						<div className="DeuxBtnMain">
 							{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}
-							<Button type={"submit"} onClick={() => {}}>
-								Se connecter
-							</Button>
-							<Link to="/Register">Enregistrer</Link>
+							<div>
+								<button type={"submit"} onClick={() => {}}>
+									Se connecter
+								</button>
+							</div>
+							<div>
+								<Link className="LinkMain" to="/Register">
+									Enregistrer
+								</Link>
+							</div>
 						</div>
 					</form>
 				</section>

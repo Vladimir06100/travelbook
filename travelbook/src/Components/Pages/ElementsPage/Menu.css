@@ -1,4 +1,5 @@
 .Menus {
+  background-color:rgb(165, 214, 219);
   display: flex;
   border: 1px solid black;
   text-align: center;

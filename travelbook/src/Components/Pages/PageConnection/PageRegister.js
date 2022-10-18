@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Button from "./UI/Button";
-import classes from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 //import PageConnect from './PageConnect';
 //import {  Route } from "react-router-dom";
@@ -49,12 +48,12 @@ const Register = () => {
 	}
 	return (
 		<>
-			<section className={classes.Login}>
+			<section className="">
 				<h1>TravelBook</h1>
 				<h1>Connecter Vous</h1>
 				<form onSubmit={handleSubmit}>
 					{/* Email */}
-					<div className={classes.control}>
+					<div className="">
 						<label htmlFor="email">Votre Email</label>
 						<input
 							type="email"
@@ -64,7 +63,7 @@ const Register = () => {
 						/>
 					</div>
 					{/* Mot de PASSE */}
-					<div className={classes.control}>
+					<div className="">
 						<label htmlFor="password">Votre Pass</label>
 						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 						<input
@@ -75,7 +74,7 @@ const Register = () => {
 						/>
 					</div>
 					{/* NOM  */}
-					<div className={classes.control}>
+					<div className="">
 						<label htmlFor="firstname">Votre Nom</label>
 						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 						<input
@@ -86,7 +85,7 @@ const Register = () => {
 						/>
 					</div>
 					{/* PRÉNOM */}
-					<div className={classes.control}>
+					<div className="">
 						<label htmlFor="lastname">Votre Prénom</label>
 						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 						<input
@@ -96,7 +95,7 @@ const Register = () => {
 							required
 						/>
 					</div>
-					<div className={classes.actions}>
+					<div className="">
 						{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}

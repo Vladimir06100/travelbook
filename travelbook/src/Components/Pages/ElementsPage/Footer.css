@@ -1,4 +1,8 @@
 .Footer {
+  background-image: url("/Users/vladimirsinkevitch/Desktop/DEV/REACT_Bocal/travelbook/travelbook/src/Components/Elements/Sans titre.png");
+  background-color: rgb(245, 212, 154);
+  background-size: cover;
+  background-position: center;
   border: 1px solid black;
   text-align: center;
   margin: 1rem 1rem 0;
@@ -7,4 +11,5 @@
   width: 95%;
   border-radius: 5px;
 box-shadow: 8px 15px 13px 3px rgba(0,0,0,0.8);
+color:white
 }
