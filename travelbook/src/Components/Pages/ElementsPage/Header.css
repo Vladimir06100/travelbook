@@ -1,4 +1,5 @@
 .Header {
+  background-color:rgb(212, 248, 248);
   border: 1px solid black;
   text-align: center;
   margin: 0 1rem 1rem;
@@ -7,5 +8,44 @@
   height: 5vh;
   border-radius: 5px;
 box-shadow: 8px 15px 13px 3px rgba(0,0,0,0.8);
-display: inline-flex;
+
+}
+
+.Header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Deconnexion{
+   text-decoration: none;
+  font: inherit;
+  background-color:antiquewhite;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  color:rgb(78, 70, 70);
+}
+.Deconnexion:hover{
+  background-color:rgb(204, 190, 171);
+  border-color: beige;
+}
+.SearchBar{
+  display: flex;
+  align-items:center;
+  font: inherit;
+  background-color: rgb(214, 213, 209);
+  color:rgb(78, 70, 70);
+  width: 40%;
+  height: 1rem;
+  padding: 0.2rem;
+  border: 1px solid rgb(146, 144, 144);
+  border-radius:       25px;
+}
+
+.SearchInput{
+  border: none;
+  color:rgb(78, 70, 70);
+  background-color: rgb(214, 213, 209);
 }

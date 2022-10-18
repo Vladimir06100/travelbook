@@ -1,9 +1,18 @@
 import "./Header.css";
+import { Search } from "@mui/icons-material";
 function HeaderMain() {
 	return (
 		<div className="Header">
-			<h1>Header</h1>
-			<button>Déconnexion</button>
+			<div>
+				<h1>TravelBooK</h1>
+			</div>
+			<div className="SearchBar">
+				<Search />
+				<input placeholder="Recherchez par theme ..." className="SearchInput" />
+			</div>
+			<div>
+				<button className="Deconnexion">Déconnexion</button>
+			</div>
 		</div>
 	);
 }

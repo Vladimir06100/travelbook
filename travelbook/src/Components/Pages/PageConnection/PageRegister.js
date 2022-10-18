@@ -1,11 +1,9 @@
 import { useState } from "react";
-import Button from "./UI/Button";
-import classes from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
-//import PageConnect from './PageConnect';
-//import {  Route } from "react-router-dom";
-//import { useHistory } from "react-router-dom";
-//import { Link } from "react-router-dom";
+import Header from "../ElementsPage/Header";
+import Footer from "../ElementsPage/Footer";
+import Menu from "../ElementsPage/Menu";
+import "./PageRegister.css";
 const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -42,72 +40,86 @@ const Register = () => {
 			// <Route path="/" element={<PageConnect />}></Route>
 			//		history.push("/");
 
-			const successMsg = console.log("User registered successfully!");
+			const successMsg = alert("User registered successfully!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
 		}
 	}
 	return (
-		<>
-			<section className={classes.Login}>
-				<h1>TravelBook</h1>
-				<h1>Connecter Vous</h1>
-				<form onSubmit={handleSubmit}>
-					{/* Email */}
-					<div className={classes.control}>
-						<label htmlFor="email">Votre Email</label>
-						<input
-							type="email"
-							id="email"
-							onChange={(e) => setEmail(e.target.value)}
-							required
-						/>
-					</div>
-					{/* Mot de PASSE */}
-					<div className={classes.control}>
-						<label htmlFor="password">Votre Pass</label>
-						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-						<input
-							type="text"
-							id="password"
-							onChange={(e) => setPassword(e.target.value)}
-							required
-						/>
-					</div>
-					{/* NOM  */}
-					<div className={classes.control}>
-						<label htmlFor="firstname">Votre Nom</label>
-						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-						<input
-							type="text"
-							id="password"
-							onChange={(e) => setFirstName(e.target.value)}
-							required
-						/>
-					</div>
-					{/* PRÉNOM */}
-					<div className={classes.control}>
-						<label htmlFor="lastname">Votre Prénom</label>
-						{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-						<input
-							type="text"
-							id="password"
-							onChange={(e) => setLastName(e.target.value)}
-							required
-						/>
-					</div>
-					<div className={classes.actions}>
-						{/* <button type="button" onClick={() => {}}>
+		<div className="Visuel">
+			<section className="SectionHeader">
+				<Header />
+			</section>
+			<div className="PartieCentre">
+				<section className="SectionMenu">
+					<Menu />
+				</section>
+
+				<section className="SectionMain">
+					<h1>TravelBook</h1>
+					<h1>Cree votre Compte</h1>
+					<form onSubmit={handleSubmit}>
+						{/* Email */}
+						<div className="">
+							<label htmlFor="email">Votre Email</label>
+							<input
+								type="email"
+								id="email"
+								onChange={(e) => setEmail(e.target.value)}
+								required
+							/>
+						</div>
+						{/* Mot de PASSE */}
+						<div className="">
+							<label htmlFor="password">Votre Pass</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="password"
+								id="password"
+								onChange={(e) => setPassword(e.target.value)}
+								required
+							/>
+						</div>
+						{/* NOM  */}
+						<div className="">
+							<label htmlFor="firstname">Votre Nom</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setFirstName(e.target.value)}
+								required
+							/>
+						</div>
+						{/* PRÉNOM */}
+						<div className="">
+							<label htmlFor="lastname">Votre Prénom</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setLastName(e.target.value)}
+								required
+							/>
+						</div>
+						<div className="BtnCreate">
+							{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}
-
-						<Button type={"submit"} onClick={handleSubmit}>
-							Creation de Votre Compte
-						</Button>
-					</div>
-				</form>
+							<button
+								className="CreateCompte"
+								type={"submit"}
+								onClick={handleSubmit}>
+								Creation de Votre Compte
+							</button>
+						</div>
+					</form>
+				</section>
+			</div>
+			<section className="SectionFooter">
+				<Footer />
 			</section>
-		</>
+		</div>
 	);
 };
 
