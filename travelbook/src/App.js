@@ -23,21 +23,27 @@ const router = createBrowserRouter([
 		element: <PagePrincipale />,
 		error: <PageErreur />,
 	},
-	/* {
+	/*  {
     path: "/profil",
     element: <Profil/>,
     error: <PageErreur />
-  },
-
-  {
-    path: "/editprofil",
-    element: <EditProfil/>,
-    error: <PageErreur />
   }, */
+
+
 ]);
 
-function App() {
-	return <RouterProvider router={router} />;
-}
 
+function App() {
+
+
+/* reation variable detat token
+creation variable router, je donne mo ncomposant login la fonction de mise a jour de token. */
+  return (
+    <div className="App">
+ <RouterProvider router={router}/>
+    
+    
+    </div>
+  )
+  }
 export default App;

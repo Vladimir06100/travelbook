@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   background-color:rgb(165, 214, 219);
-  background-image: url("/Users/vladimirsinkevitch/Desktop/DEV/REACT_Bocal/travelbook/travelbook/src/Components/Elements/Sans titre11.png");
+  background-image: url("../../Elements/Sans\ titre11.png");
   display: flex;
   background-size: 150px 600px;
   

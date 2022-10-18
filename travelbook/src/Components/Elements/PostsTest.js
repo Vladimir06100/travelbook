@@ -1,28 +1,39 @@
-import { useState } from "react";
+import {useState} from "react";
+import AjoutCom from "../Pages/PageMain/AjoutCom";
 
-function PostsTest(props) {
-	const [Likes, setLikes] = useState(false);
+function PostsTest (props){
 
-	const likeUnlike = () => {
-		setLikes(!Likes);
-	};
+const [Likes, setLikes]= useState (false);
+    
+const likeUnlike = ()=>{
 
-	const [rango, setRango] = useState("");
+    setLikes(!Likes)
 
-	return (
-		<div className="Article">
-			<h1>{props.title}</h1>
-			<p>{props.details}</p>
-			<p>{Likes ? "J'aime" : "Je n'aime pas"}</p>
-			<button className="BtnLike" onClick={likeUnlike}>Like</button>
-			<p>{rango}</p>
-			<input
-				type="text"
-				onChange={(ev) => setRango(ev.target.value)}
-				placeholder="comment cet article"
-			/>
-		</div>
-	);
+};
+  
+    
+    
+
+    return(
+
+
+        <div>
+
+            
+<h1>{props.title}</h1>
+<p>{props.details}</p>
+<button onClick={likeUnlike}>{Likes ? <span>💓</span> : <span>💔</span>}</button>
+       
+
+            <AjoutCom/>
+
+        </div>
+
+
+    )
+
+
+
 }
 
 export default PostsTest;

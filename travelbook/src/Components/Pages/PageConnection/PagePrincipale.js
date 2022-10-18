@@ -3,7 +3,11 @@ import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./PagePrincipale.css";
 import PostsTest from "../../Elements/PostsTest";
+import CreatePost from "../PageMain/CreatePost";
 const PagePrincipale = () => {
+<CreatePost/>
+
+
 	const listeArticles = [
 		{
 			title: "Article1",
