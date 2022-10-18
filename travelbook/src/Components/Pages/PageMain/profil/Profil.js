@@ -1,7 +1,9 @@
 import {Link} from 'react-router-dom'; 
+import {useState} from 'react';
+
 
 function Profil (){
-   
+
     async function getProfil() {
 
         
@@ -19,19 +21,23 @@ function Profil (){
         
         const data =await response.json();
 
-        console.log(data.lastname);
-        
+    console.log(data.lastname)
+
     }
-    
+
     getProfil();
-    
-    
-    
-    
-    /* const nom = localStorage.getItem("lastname", data.lastname); */
-    
-/*     
-    const profil = JSON.stringify(data, lastname) */
+
+/*    const [profil,setProfil] = useState({lastname : "lastname"});
+    console.log(profil);
+	const [viewProfil,setViewProfil] = useState(""); 
+
+    function viewProfilperso(){
+
+    profil.push(viewProfil);
+
+    setProfil(profil);
+    } */
+
     return(
 
     <div>
@@ -42,7 +48,7 @@ function Profil (){
      
     <nav>
 
-    <Link to="/pagemain">Accueil</Link>
+    <Link to="/PagePrincipale">Accueil</Link>
     <Link to="/editprofil">Editer mon profil</Link>
 
     </nav>
@@ -51,7 +57,7 @@ function Profil (){
 
 <section>
   
-  <p> votre nom est : </p>
+  <p onChange={viewProfilperso}> votre nom est : {profil} </p>
 
 </section>
 
