@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import { useNavigate } from "react-router-dom";
-import "./PageConnect.css";
-
-const Login = () => {
+import "./PageRegister.css";
+const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [firstname, setFirstName] = useState("");
+	const [lastname, setLastName] = useState("");
 	const navigate = useNavigate();
+	//   const history = useHistory();
 
 	// остановка обновления страницы
 	async function handleSubmit(e) {
@@ -22,24 +23,26 @@ const Login = () => {
 			body: JSON.stringify({
 				email: email,
 				password: password,
+				firstname: firstname,
+				lastname: lastname,
 			}),
 		};
 
 		const response = await fetch(
-			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/login",
+			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/register",
 			options
 		);
 		console.log(response);
-		const data = await response.json();
-		localStorage.setItem("token", data.token);
+		localStorage.setItem(email, password);
 
 		if (response.ok) {
-			navigate(`/PagePrincipale`);
-			const successMsg = console.log("Connecter!");
+			navigate(`/`);
+			// <Route path="/" element={<PageConnect />}></Route>
+			//		history.push("/");
+
+			const successMsg = alert("User registered successfully!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
-		} else {
-			alert("Compte n’existe pas!!!");
 		}
 	}
 	return (
@@ -54,8 +57,9 @@ const Login = () => {
 
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
-					<h1>Connecter Vous</h1>
+					<h1>Cree votre Compte</h1>
 					<form onSubmit={handleSubmit}>
+						{/* Email */}
 						<div className="">
 							<label htmlFor="email">Votre Email</label>
 							<input
@@ -65,7 +69,8 @@ const Login = () => {
 								required
 							/>
 						</div>
-						<div>
+						{/* Mot de PASSE */}
+						<div className="">
 							<label htmlFor="password">Votre Pass</label>
 							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
@@ -75,23 +80,38 @@ const Login = () => {
 								required
 							/>
 						</div>
-						<div className="DeuxBtnMain">
+						{/* NOM  */}
+						<div className="">
+							<label htmlFor="firstname">Votre Nom</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setFirstName(e.target.value)}
+								required
+							/>
+						</div>
+						{/* PRÉNOM */}
+						<div className="">
+							<label htmlFor="lastname">Votre Prénom</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setLastName(e.target.value)}
+								required
+							/>
+						</div>
+						<div className="BtnCreate">
 							{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}
-							<div>
-								<button type={"submit"} onClick={() => {}}>
-									Se connecter
-									{/* <Link className="LinkMain" to="/Principale">
-										Enregistrer
-									</Link> */}
-								</button>
-							</div>
-							<div>
-								<Link className="LinkMain" to="/Register">
-									Enregistrer
-								</Link>
-							</div>
+							<button
+								className="CreateCompte"
+								type={"submit"}
+								onClick={handleSubmit}>
+								Creation de Votre Compte
+							</button>
 						</div>
 					</form>
 				</section>
@@ -103,4 +123,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Register;
