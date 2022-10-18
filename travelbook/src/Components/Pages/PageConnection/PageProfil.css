@@ -1,0 +1,12 @@
+.SectionMain{
+  background-image: url("../../Elements/getty_583734066_335273.jpeg");
+  background-position: center; 
+  border: 1px solid black;
+  text-align: center;
+  margin: 0rem 1rem;
+  padding: 1rem;
+  height: auto;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 8px 15px 13px 3px rgba(0,0,0,0.8);
+}
