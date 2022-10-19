@@ -1,44 +1,41 @@
 .Menus {
-  display: flex;
-  justify-content: center;
-  background-color:rgb(165, 214, 219);
-  background-image: url("../../Elements/Sans\ titre11.png");
-  display: flex;
-  background-size: 150px 600px;
-  
-  background-position: center;
-  border: 1px solid black;
-  text-align: center;
-  margin: 0 0 0 1rem;
-  padding: 1rem;
-  height: 55vh;
-  width: 15vh;
-  height: 70vh;
-  border-radius: 5px;
-  box-shadow: 8px 15px 13px 3px rgba(0,0,0,0.8);
+	display: flex;
+	justify-content: center;
+	background-color: rgb(165, 214, 219);
+	background-image: url("../../Elements/Sans\ titre11.png");
+	display: flex;
+	background-size: 150px 600px;
+	background-position: center;
+	border: 1px solid black;
+	text-align: center;
+	margin: 0 0 0 1rem;
+	padding: 1rem;
+	height: 55vh;
+	width: 15vh;
+	height: 70vh;
+	border-radius: 5px;
+	box-shadow: 8px 15px 13px 3px rgba(0, 0, 0, 0.8);
 }
-.BtnAccPro{
-  display: flex;
-flex-direction: column;
-
+.BtnAccPro {
+	display: flex;
+	flex-direction: column;
 }
-.BtnAccPro button{
- margin: 5px 0;
-   font: inherit;
-  background-color:antiquewhite;
-  padding: 0.2rem 0.7rem;
-  border-radius: 5px;
-  border: 1px solid white;
-  cursor: pointer;
-  color:rgb(78, 70, 70);
+.BtnAccPro button {
+	margin: 5px 0;
+	font: inherit;
+	background-color: antiquewhite;
+	padding: 0.2rem 0.7rem;
+	border-radius: 5px;
+	border: 1px solid white;
+	cursor: pointer;
+	color: rgb(78, 70, 70);
 }
 
-.BtnAccPro button:hover{
-  background-color:rgb(204, 190, 171);
-  border-color: beige;
+.BtnAccPro button:hover {
+	background-color: rgb(204, 190, 171);
+	border-color: beige;
 }
 
-
-.deuxButton h1{
-  margin-bottom: 10px;
+.deuxButton h1 {
+	margin-bottom: 10px;
 }

@@ -37,9 +37,6 @@ const Register = () => {
 
 		if (response.ok) {
 			navigate(`/`);
-			// <Route path="/" element={<PageConnect />}></Route>
-			//		history.push("/");
-
 			const successMsg = alert("User registered successfully!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
