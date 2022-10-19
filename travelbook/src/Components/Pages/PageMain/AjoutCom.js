@@ -1,14 +1,14 @@
 import "./AjoutCom.css";
 import { useReducer, useRef, useState } from "react";
-import { ForumOutlined } from "@mui/icons-material";
+//import { ForumOutlined } from "@mui/icons-material";
 
 const AjoutCom = () => {
-	const [postid, setPostid] = useState("");
+	const [postId, setPostid] = useState("");
 	const [content, setContent] = useState("");
 
 	function handleCom(e) {
 		const { id, value } = e.target;
-		if (id === "postd") {
+		if (id === "postId") {
 			setPostid(value);
 		}
 		if (id === "content") {
@@ -27,7 +27,7 @@ const AjoutCom = () => {
 			},
 
 			body: JSON.stringify({
-				postId: postid,
+				postId: postId,
 				content: content,
 			}),
 		};
