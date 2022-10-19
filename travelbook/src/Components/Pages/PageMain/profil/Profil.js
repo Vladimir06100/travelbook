@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 function Profil() {
+    const [user,setUser] = useState({firstname:"",lastname:"",email:"",ID:""})
+
 	async function getProfil() {
+
 		const token = localStorage.getItem("token");
 		const options = {
 			method: "GET",
@@ -18,16 +21,18 @@ function Profil() {
 		);
 
 		const data = await response.json();
+        const ID= data._id;
+        const firstname= data.firstname;
+        const lastname = data.lastname;
+        const email = data.email;
 
-		console.log(data.lastname);
+setUser({firstname:firstname,lastname:lastname,email:email,ID:ID});
+
 	}
 
-	getProfil();
+    useEffect(()=>{getProfil()},[])
+	
 
-	/* const nom = localStorage.getItem("lastname", data.lastname); */
-
-	/*     
-    const profil = JSON.stringify(data, lastname) */
 	return (
 		<div>
 			<nav>
@@ -38,7 +43,10 @@ function Profil() {
 			<h2>Mon profil</h2>
 
 			<section>
-				<p> votre nom est : </p>
+				<p>Nom : {user.lastname} </p>
+               <p> Prénom : {user.firstname} </p>
+               <p> Email : {user.email} </p>
+               <p> ID : {user.ID} </p>
 			</section>
 		</div>
 	);
