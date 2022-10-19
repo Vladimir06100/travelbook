@@ -82,23 +82,23 @@ const Register = () => {
 						</div>
 						{/* NOM  */}
 						<div className="">
-							<label htmlFor="firstname">Votre Nom</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-							<input
-								type="text"
-								id="password"
-								onChange={(e) => setFirstName(e.target.value)}
-								required
-							/>
-						</div>
-						{/* PRÉNOM */}
-						<div className="">
-							<label htmlFor="lastname">Votre Prénom</label>
+							<label htmlFor="lastname">Votre Nom</label>
 							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
 								type="text"
 								id="password"
 								onChange={(e) => setLastName(e.target.value)}
+								required
+							/>
+						</div>
+						{/* PRÉNOM */}
+						<div className="">
+							<label htmlFor="firstname">Votre Prénom</label>
+							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
+							<input
+								type="text"
+								id="password"
+								onChange={(e) => setFirstName(e.target.value)}
 								required
 							/>
 						</div>
