@@ -2,9 +2,9 @@ import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./CSSdesPages/PagePrincipale.css";
-//import Likes from "../../Elements/Likes";
 import CreatePost from "../PageMainDetails/CreatePost";
 import ViewPosts from "../PageMainDetails/ViewPosts";
+
 const PagePrincipale = () => {
 	return (
 		<div className="Visuel">

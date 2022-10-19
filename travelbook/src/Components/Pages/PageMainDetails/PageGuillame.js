@@ -2,7 +2,6 @@ import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import { useEffect, useState } from "react";
-import Post from "../Pages/PostsSansLogin";
 
 function App() {
 	const [posts, setPosts] = useState([]);

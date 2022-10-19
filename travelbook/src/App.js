@@ -8,11 +8,6 @@ import PageProfil from "./Components/Pages/Pages/PageProfil";
 //import PageSansLogin from "./Components/Pages/Pages/PageSansLogin";
 
 const router = createBrowserRouter([
-	/* 	{
-		path: "/",
-		element: <PageSansLogin />,
-		error: <PageErreur />,
-	}, */
 	{
 		path: "/",
 		element: <PagePrincipale />,
@@ -39,6 +34,12 @@ const router = createBrowserRouter([
 		error: <PageErreur />,
 	},
 ]);
+
+/* 	{
+		path: "/",
+		element: <PageSansLogin />,
+		error: <PageErreur />,
+	}, */
 
 function App() {
 	return (
