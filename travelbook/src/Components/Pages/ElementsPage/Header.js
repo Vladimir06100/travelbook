@@ -27,6 +27,13 @@ function HeaderMain() {
 
 	return (
 		<div className="Header">
+			<div className="Absolute">
+				<img
+					className="Chat"
+					src="https://i.pinimg.com/originals/0a/8d/77/0a8d779ffa83e45877df56a7ad06735e.png"
+					alt="chat"
+				/>
+			</div>
 			<div>
 				<h1>TravelBooK</h1>
 			</div>

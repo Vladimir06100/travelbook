@@ -1,6 +1,6 @@
-import "./AjoutCom.css";
-import { useReducer, useRef, useState } from "react";
-//import { ForumOutlined } from "@mui/icons-material";
+import "./CssDetails/AjoutCom.css";
+import { useReducer, useRef } from "react";
+
 
 const AjoutCom = () => {
 	const [postId, setPostid] = useState("");

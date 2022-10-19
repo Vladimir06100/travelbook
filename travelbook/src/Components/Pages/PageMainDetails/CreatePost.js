@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./CssDetails/CreatePost.css";
 
 function CreatePost() {
 	const [title, setTitle] = useState("");
@@ -46,24 +47,27 @@ function CreatePost() {
 	return (
 		<div className="CreatePost">
 			<form>
-				<h2>Whats UP Traveler ?</h2>
-				<input
-					type="text"
-					id="title"
-					onChange={handleCom}
-					required
-					placeholder=" Titre de votre voyage"
-				/>
+				<h2 className="WhatsUP">Whats UP Traveler ?</h2>
+				<div className="InputAjoutCom">
+					<input
+						className="InputTitre"
+						type="text"
+						id="title"
+						onChange={handleCom}
+						required
+						placeholder="&#127957;Titre de votre Voyage&#127957;"
+					/>
 
-				<input
-					type="text"
-					id="post"
-					onChange={handleCom}
-					required
-					placeholder=" Parlez de votre voyage"
-				/>
-
-				<button type={"submit"} onClick={handleSubmit}>
+					<input
+						className="InputDetail"
+						type="text"
+						id="post"
+						onChange={handleCom}
+						required
+						placeholder="&#9992;Parlez de votre voyage"
+					/>
+				</div>
+				<button className="CreationPost" type={"submit"} onClick={handleSubmit}>
 					Creation Post
 				</button>
 			</form>

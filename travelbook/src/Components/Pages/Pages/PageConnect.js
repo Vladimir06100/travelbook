@@ -5,7 +5,7 @@ import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import { useNavigate } from "react-router-dom";
 import "./CSSdesPages/PageConnect.css";
-import "../../Pages/PageMainDetails/StyleGeneraleMain.css";
+import "./CSSdesPages/StyleGeneraleMain.css";
 
 const Login = () => {
 	const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const Login = () => {
 		const successMsg = data.success;
 
 		if (successMsg === true) {
-			navigate(`/PagePrincipale`);
+			navigate(`/`);
 			const successMsg = console.log("Connecter!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
@@ -87,9 +87,6 @@ const Login = () => {
 							<div>
 								<button type={"submit"} onClick={() => {}}>
 									Se connecter
-									{/* <Link className="LinkMain" to="/Principale">
-										Enregistrer
-									</Link> */}
 								</button>
 							</div>
 							<div>
