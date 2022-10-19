@@ -6,28 +6,10 @@ function Menu() {
 
 	async function handleClick(e) {
 		e.preventDefault();
-		const token = localStorage.getItem("user");
+		const token = localStorage.getItem("token");
 
-		const options = {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `bearer ${token}`,
-			},
-		};
-
-		const response = await fetch(
-			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/user/_id",
-			options
-		);
-
-		const data = await response.json({});
-		console.log(data.user);
-		localStorage.getItem("token", data.user);
-		const req = data._id;
-
-		if (req.user === true) {
-			navigate(`/PageProfil`);
+		if (token) {
+			navigate(`/profil`);
 		} else {
 			alert("Compte n’existe pas!!!");
 		}
