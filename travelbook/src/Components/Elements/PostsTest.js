@@ -21,7 +21,7 @@ const likeUnlike = async ()=>{
         };
         const response = await fetch("https://social-network-api.oscfr1.scalingo.io/TravelBook/post/like", options);
         const data = await response.json();
-    
+        console.log()
 
     setLikes(!Likes)
 
