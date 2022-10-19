@@ -1,6 +1,5 @@
-import { PrivacyTipSharp } from "@mui/icons-material";
-import Likes from "../../Elements/Likes";
-import AjoutCom from "../PageMain/AjoutCom";
+import Likes from "../PageMainDetails/Likes";
+import AjoutCom from "../PageMainDetails/AjoutCom";
 
 function Posts(props) {
 	return (

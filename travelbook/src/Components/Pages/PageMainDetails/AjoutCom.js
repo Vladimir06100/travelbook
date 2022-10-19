@@ -79,10 +79,10 @@ const AjoutCom = () => {
 	};
 
 	return (
-		<div className="maincontainer">
-			<form onSubmit={handleSubmit} className="formular">
+		<div className="MainContainer">
+			<form onSubmit={handleSubmit} className="Formular">
 				<textarea
-					className="commentcontainer"
+					className="CommentContainer"
 					type="text"
 					name="title"
 					ref={inputRef}
@@ -92,13 +92,13 @@ const AjoutCom = () => {
 				<br></br>
 				<button type="submit" onClick={handleSubmitComment}>envoyer</button>
 			</form>
-			<div className="comments">
+			<div className="Comments">
 				{comments &&
 					comments.map((comment, index) => (
-						<div className="comment" key={index}>
+						<div className="Comment" key={index}>
 							<button
 								onClick={() => dispatch({ type: "remove_comment", index })}
-								classname="btndelete">
+								classname="BtnDelete">
 								❌
 							</button>
 							<div>

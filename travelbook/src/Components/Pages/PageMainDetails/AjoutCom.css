@@ -1,4 +1,4 @@
-.maincontainer {
+.MainContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -6,12 +6,12 @@
 	margin-top: 10px;
 }
 
-.inputbox {
+.InputBox {
 	height: 75px;
 	width: 350px;
 	background-color: white;
 }
-.commentbutton {
+.CommentButton {
 	height: 40px;
 	width: 80px;
 	background-color: blue;
@@ -21,7 +21,7 @@
 	border-style: none;
 }
 
-.commentcontainer {
+.CommentContainer {
 	height: 75px;
 	width: 350px;
 	background-color: rgb(249, 171, 171);

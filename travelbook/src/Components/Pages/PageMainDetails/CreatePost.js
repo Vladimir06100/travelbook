@@ -44,7 +44,7 @@ function CreatePost() {
 	}
 
 	return (
-		<div className="Createpost">
+		<div className="CreatePost">
 			<form>
 				<h2>Whats UP Traveler ?</h2>
 				<input

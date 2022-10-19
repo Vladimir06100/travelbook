@@ -1,12 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageConnect from "./Components/Pages/PageConnection/PageConnect";
-import PageRegister from "./Components/Pages/PageConnection/PageRegister";
-import PagePrincipale from "./Components/Pages/PageConnection/PagePrincipale";
-import PageModifProfile from "./Components/Pages/PageConnection/PageModifProfile";
-import PageErreur from "./Components/Pages/PageConnection/PageErreur";
-
-//import PageErreur from "./Components/Elements/pageErreur";
-import PageProfil from "./Components/Pages/PageConnection/PageProfil";
+import PageConnect from "./Components/Pages/Pages/PageConnect";
+import PageRegister from "./Components/Pages/Pages/PageRegister";
+import PagePrincipale from "./Components/Pages/Pages/PagePrincipale";
+import PageModifProfile from "./Components/Pages/Pages/PageModifProfile";
+import PageErreur from "./Components/Pages/Pages/PageErreur";
+import PageProfil from "./Components/Pages/Pages/PageProfil";
 
 const router = createBrowserRouter([
 	{
@@ -37,8 +35,6 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-	/* reaction variable d’état token
-creation variable router, je donne mon composant login la fonction de mise a jour de token. */
 	return (
 		<div className="App">
 			<RouterProvider router={router} />
