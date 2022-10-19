@@ -1,9 +1,8 @@
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import "./PageProfil.css";
+import "./PageModifProfile.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 function PageProfil() {
 	const [user, setUser] = useState({
@@ -12,6 +11,21 @@ function PageProfil() {
 		email: "",
 		ID: "",
 	});
+
+  function lastnameChange(e) {
+    setUser({
+      // sortir user (tableau des donnes) par ... deviser en morceaux   par "," écraser ancien par nouveau valeur et lu renvoyer au server ... 
+      // par button valider (cree une function avec méthode PUT user et ont selection  BODY a utiliser aux choix)
+      ...user,
+      // écraser = mise a jour last name
+      lastname: e.target.value
+  })
+}
+
+  
+  /// méthode PUT ont ajoute body
+  
+  
 	async function getProfil() {
 		const token = localStorage.getItem("token");
 		const options = {
@@ -47,18 +61,28 @@ function PageProfil() {
 
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
-					<h1>Votre Profil</h1>
-					<section>
-						<p>Nom : {user.lastname} </p>
-						<p> Prénom : {user.firstname} </p>
-						<p> Email : {user.email} </p>
-						<p> ID : {user.ID} </p>
-						<div className="DivLinkModif">
-							<Link className="LinkModif" to="/PageModifProfile">
-								Modifier
-							</Link>
-						</div>
+					<h1>Modifier Votre Profil</h1>
+					<section className="ModifUser">
+						<p>
+							Nom :
+							<input
+								type="text"
+								placeholder="Select new lastname"
+								value={user.lastname} onChange={lastnameChange}
+							/>
+						</p>
+						<p>
+							{" "}
+							Prénom : {user.firstname}{" "}
+							<input type="text" placeholder="Select new firstname" />
+						</p>
+						<p>
+							{" "}
+							Email : {user.email}{" "}
+							<input type="text" placeholder="Select new email" />
+						</p>
 					</section>
+					<button className="BtnValider">Valider</button>
 				</section>
 			</div>
 			<section className="SectionFooter">

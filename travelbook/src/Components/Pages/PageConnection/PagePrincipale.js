@@ -3,7 +3,7 @@ import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./PagePrincipale.css";
 import PostsTest from "../../Elements/PostsTest";
-import CreatePost from "../PageMain/CreatePost";
+//import CreatePost from "../PageMain/CreatePost";
 import AffichagePost from "../PageMain/AffichagePosts";
 const PagePrincipale = () => {
 
@@ -41,7 +41,7 @@ const PagePrincipale = () => {
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Page Principale</h1>
-					<CreatePost />
+				
 					<AffichagePost />
 					{listeArticles.map((article) => {
 						return (
