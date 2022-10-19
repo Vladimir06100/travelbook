@@ -1,3 +1,5 @@
+import Likes from '../../Elements/Likes'
+import AjoutCom from "../PageMain/AjoutCom";
 
 
 
@@ -9,6 +11,8 @@ function Posts(props){
           Article:   {props.content}
             Nom : {props.firstname}
             Numéro article : {props._id}
+            <Likes />
+            <AjoutCom/>
         </div>
     )
 

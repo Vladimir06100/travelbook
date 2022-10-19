@@ -1,7 +1,7 @@
 
        import {useEffect, useState} from 'react';
        import Posts from './Posts'
-
+ 
 
        function ViewPosts(){
         const [post, setPost] = useState([{title:"",content:""}]);
@@ -42,15 +42,17 @@
         
 {post.map((posts,index)=>( <Posts key ={index} 
 index={index} 
-_id={posts._id}
-title={posts.title}
-content={posts.content}
-firstname={posts.firstname}
+_id= {posts._id}
+title= {posts.title}
+content= {posts.content}
+firstname= {posts.firstname}
 
 />
   )
 
 )}
+
+
 
        </div>
      ) 
