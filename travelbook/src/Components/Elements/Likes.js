@@ -1,9 +1,11 @@
 import { useState } from "react";
 
-function PostsTest(props) {
-	const [Likes, setLikes] = useState(false);
+
+function PostsTest() {
+	const [Likes, setLikes] = useState("");
 
 	const likeUnlike = async () => {
+        setLikes(!Likes);
 		var token = localStorage.getItem("token");
 		const options = {
 			method: "POST",
@@ -12,16 +14,15 @@ function PostsTest(props) {
 				Authorization: `bearer ${token}`,
 			},
 			body: JSON.stringify({
-				postId: "postId",
+				postId: Likes,
 			}),
 		};
 		const response = await fetch(
 			"https://social-network-api.oscfr1.scalingo.io/TravelBook/post/like",
 			options
 		);
-		await response.json();
-
-		setLikes(!Likes);
+        await response.json();
+       
 	};
 
 	return (
@@ -29,6 +30,8 @@ function PostsTest(props) {
 			<button onClick={likeUnlike}>
 				{Likes ? <span>💓</span> : <span>❤</span>}
 			</button>
+         
+
 		</div>
 	);
 }

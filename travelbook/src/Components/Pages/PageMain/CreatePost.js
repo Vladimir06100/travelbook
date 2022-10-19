@@ -39,7 +39,8 @@ function CreatePost() {
 			options
 		);
 
-		await response.json();
+	await response.json();
+       
 	}
 
 	return (
