@@ -4,7 +4,7 @@ import Menu from "../ElementsPage/Menu";
 import "./PagePrincipale.css";
 import PostsTest from "../../Elements/PostsTest";
 import CreatePost from "../PageMain/CreatePost";
-import AffichagePost from "../PageMain/AffichagePosts";
+import ViewPosts from "../PageConnection/ViewPosts"
 const PagePrincipale = () => {
 
 
@@ -42,7 +42,8 @@ const PagePrincipale = () => {
 					<h1>TravelBook</h1>
 					<h1>Page Principale</h1>
 					<CreatePost />
-					<AffichagePost />
+					<ViewPosts />
+
 					{listeArticles.map((article) => {
 						return (
 							<PostsTest title={article.title} details={article.details} />
