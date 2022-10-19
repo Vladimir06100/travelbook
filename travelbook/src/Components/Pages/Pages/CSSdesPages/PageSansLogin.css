@@ -1,0 +1,18 @@
+.ArticleSansLogin {
+	background-color: rgba(128, 128, 128, 0.248);
+}
+.LiPosts {
+	text-decoration: none;
+}
+.Test p{
+  color: White;
+}
+.Test ul{
+  list-style-type: none;
+}
+.PostTitle{
+  margin: 2rem;
+  	color: rgb(210, 210, 198);
+	text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8,
+		1px 2px 6px rgba(85, 206, 43, 0), 1px 2px 6px rgba(252, 255, 255, 0);
+}

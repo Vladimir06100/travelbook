@@ -18,8 +18,8 @@ function HeaderMain() {
 		e.preventDefault();
 		const token = localStorage.getItem("token");
 
-		if (token) {
-			navigate(`/profil`);
+		if (token !== true) {
+			navigate(`/PageConnect`);
 		} else {
 			alert("Compte n’existe pas!!!");
 		}
@@ -35,7 +35,10 @@ function HeaderMain() {
 				<input placeholder="Recherchez par theme ..." className="SearchInput" />
 			</div>
 			<div>
-				<button className="Connexion" type="submit" onClick={handleClickConnect}>
+				<button
+					className="Connexion"
+					type="submit"
+					onClick={handleClickConnect}>
 					Connexion
 				</button>
 				<button className="Deconnexion" type="submit" onClick={handleClick}>

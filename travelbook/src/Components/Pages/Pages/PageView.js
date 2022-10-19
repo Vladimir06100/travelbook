@@ -26,7 +26,6 @@ function ViewPosts() {
 	}, []);
 
   async function PutComment() {
-    
   }
 
 	function postChange(e) {

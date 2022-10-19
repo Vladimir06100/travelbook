@@ -5,10 +5,16 @@ import PagePrincipale from "./Components/Pages/Pages/PagePrincipale";
 import PageModifProfile from "./Components/Pages/Pages/PageModifProfile";
 import PageErreur from "./Components/Pages/Pages/PageErreur";
 import PageProfil from "./Components/Pages/Pages/PageProfil";
+import PageSansLogin from "./Components/Pages/Pages/PageSansLogin";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
+		element: <PageSansLogin />,
+		error: <PageErreur />,
+	},
+	{
+		path: "/PageConnect",
 		element: <PageConnect />,
 		error: <PageErreur />,
 	},
@@ -23,7 +29,7 @@ const router = createBrowserRouter([
 		error: <PageErreur />,
 	},
 	{
-		path: "/profil",
+		path: "/Profil",
 		element: <PageProfil />,
 		error: <PageErreur />,
 	},
