@@ -4,7 +4,7 @@ import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./CSSdesPages/PageRegister.css";
-import "../PageMainDetails/StyleGeneraleMain.css";
+import "./CSSdesPages/StyleGeneraleMain.css";
 const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");

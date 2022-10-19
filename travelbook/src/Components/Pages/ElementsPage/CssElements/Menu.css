@@ -3,8 +3,7 @@
 	justify-content: center;
 	background-color: rgb(165, 214, 219);
 	background-image: url("../../../Elements/ImageMenu.png");
-	display: flex;
-	background-size: 150px 600px;
+	background-size: 350px 600px;
 	background-position: center;
 	border: 1px solid black;
 	text-align: center;

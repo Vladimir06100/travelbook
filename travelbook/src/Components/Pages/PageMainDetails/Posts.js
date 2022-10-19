@@ -1,5 +1,5 @@
-import Likes from "../PageMainDetails/Likes";
-import AjoutCom from "../PageMainDetails/AjoutCom";
+import Likes from "./Likes";
+import AjoutCom from "./AjoutCom";
 
 function Posts(props) {
 	return (

@@ -25,8 +25,7 @@ function ViewPosts() {
 		getPost();
 	}, []);
 
-  async function PutComment() {
-  }
+	async function PutComment() {}
 
 	function postChange(e) {
 		e.preventDefault();

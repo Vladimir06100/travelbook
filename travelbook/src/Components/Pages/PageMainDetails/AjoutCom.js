@@ -1,6 +1,6 @@
-import "./AjoutCom.css";
+import "./CssDetails/AjoutCom.css";
 import { useReducer, useRef } from "react";
-// import { ForumOutlined } from "@mui/icons-material";
+
 
 const AjoutCom = () => {
 	const inputRef = useRef();
