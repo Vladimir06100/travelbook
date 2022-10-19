@@ -1,6 +1,6 @@
 import "./AjoutCom.css"
 import { useReducer, useRef } from "react";
-import { ForumOutlined } from "@mui/icons-material";
+//import { ForumOutlined } from "@mui/icons-material";
 
 const AjoutCom=()=>{
 
@@ -22,7 +22,7 @@ const AjoutCom=()=>{
 
             }
             case 'remove_comment':{
-                return state.filter((task,index)=>index!=action.index)
+                return state.filter((task,index)=>index!==action.index)
             }
             default:{
                 return state;

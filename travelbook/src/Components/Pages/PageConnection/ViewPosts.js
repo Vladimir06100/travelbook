@@ -1,7 +1,7 @@
 
        import {useEffect, useState} from 'react';
        import Posts from './Posts'
- 
+       
 
        function ViewPosts(){
         const [post, setPost] = useState([{title:"",content:""}]);
@@ -37,6 +37,7 @@
 
  
      return (
+      <div className="contain">
        <div className="FEED">
          <h1>Mon FEED de Travelers</h1>
         
@@ -48,13 +49,19 @@ content= {posts.content}
 firstname= {posts.firstname}
 
 />
+
   )
+
+
 
 )}
 
 
 
        </div>
+
+      </div>
+      
      ) 
      }
      export default ViewPosts;

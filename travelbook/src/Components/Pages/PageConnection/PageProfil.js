@@ -3,7 +3,7 @@ import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./PageProfil.css";
 import {useEffect, useState} from 'react';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function PageProfil() {
 
