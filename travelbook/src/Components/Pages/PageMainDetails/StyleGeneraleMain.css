@@ -1,19 +1,16 @@
 .SectionMain {
-	background-image: url("../../Elements/getty_583734066_335273.jpeg");
+	background-image: url("../../Elements/ImageMain.jpeg");
 	background-position: center;
 	border: 1px solid black;
 	text-align: center;
 	margin: 0rem 1rem;
 	padding: 1rem;
-	height: auto;
-	width: 100%;
+	overflow: auto;
+	min-width: 80vw;
 	border-radius: 5px;
 	box-shadow: 8px 15px 13px 3px rgba(0, 0, 0, 0.8);
 }
-
-.ModifUser {
-	margin-bottom: 1rem;
-}
-.ModifUser p {
-	margin: 1rem;
+.SectionMain h1{
+ color: #FFFFFF;
+text-shadow: 3px 5px 2px #474747;
 }

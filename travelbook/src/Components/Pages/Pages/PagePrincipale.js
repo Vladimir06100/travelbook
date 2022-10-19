@@ -1,10 +1,10 @@
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import "./PagePrincipale.css";
+import "./CSSdesPages/PagePrincipale.css";
 //import Likes from "../../Elements/Likes";
-import CreatePost from "../PageMain/CreatePost";
-import ViewPosts from "../PageConnection/ViewPosts";
+import CreatePost from "../PageMainDetails/CreatePost";
+import ViewPosts from "./ViewPosts";
 const PagePrincipale = () => {
 	return (
 		<div className="Visuel">

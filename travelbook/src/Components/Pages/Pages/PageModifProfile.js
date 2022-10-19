@@ -1,7 +1,8 @@
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import "./PageModifProfile.css";
+import "./CSSdesPages/PageModifProfile.css";
+import "../PageMainDetails/StyleGeneraleMain.css"
 import { useEffect, useState } from "react";
 
 function PageProfil() {

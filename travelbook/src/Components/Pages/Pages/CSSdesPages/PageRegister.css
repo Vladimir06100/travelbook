@@ -1,0 +1,12 @@
+.Visuel {
+	flex-wrap: wrap;
+	height: 85%;
+	background-color: rgb(89, 90, 92);
+	color: rgb(114, 111, 111);
+}
+.PartieCentre {
+	display: flex;
+}
+.BtnCreate {
+	margin: 1rem;
+}

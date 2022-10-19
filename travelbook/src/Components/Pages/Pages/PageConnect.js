@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import "./PageRegister.css";
-const Register = () => {
+import { useNavigate } from "react-router-dom";
+import "./CSSdesPages/PageConnect.css";
+import "../../Pages/PageMainDetails/StyleGeneraleMain.css";
+
+const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [firstname, setFirstName] = useState("");
-	const [lastname, setLastName] = useState("");
 	const navigate = useNavigate();
-	//   const history = useHistory();
 
 	// остановка обновления страницы
 	async function handleSubmit(e) {
@@ -23,25 +23,30 @@ const Register = () => {
 			body: JSON.stringify({
 				email: email,
 				password: password,
-				firstname: firstname,
-				lastname: lastname,
 			}),
 		};
 
 		const response = await fetch(
-			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/register",
+			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/login",
 			options
 		);
 		console.log(response);
-		localStorage.setItem(email, password);
+		const data = await response.json();
+		localStorage.setItem("token", data.token);
+		const successMsg = data.success;
 
-		if (response.ok) {
-			navigate(`/`);
-			const successMsg = alert("User registered successfully!");
+		if (successMsg === true) {
+			navigate(`/PagePrincipale`);
+			const successMsg = console.log("Connecter!");
 			console.log("Bravo!!!!!!");
 			return successMsg;
+		} else {
+			alert(
+				"Compte n’existe pas!!!\n Ou Votre EMAIL est erronée \n Ou Votre mot de passe erronée"
+			);
 		}
 	}
+
 	return (
 		<div className="Visuel">
 			<section className="SectionHeader">
@@ -54,9 +59,8 @@ const Register = () => {
 
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
-					<h1>Cree votre Compte</h1>
+					<h1>Connecter Vous</h1>
 					<form onSubmit={handleSubmit}>
-						{/* Email */}
 						<div className="">
 							<label htmlFor="email">Votre Email</label>
 							<input
@@ -66,8 +70,7 @@ const Register = () => {
 								required
 							/>
 						</div>
-						{/* Mot de PASSE */}
-						<div className="">
+						<div>
 							<label htmlFor="password">Votre Pass</label>
 							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
@@ -77,38 +80,23 @@ const Register = () => {
 								required
 							/>
 						</div>
-						{/* NOM  */}
-						<div className="">
-							<label htmlFor="lastname">Votre Nom</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-							<input
-								type="text"
-								id="password"
-								onChange={(e) => setLastName(e.target.value)}
-								required
-							/>
-						</div>
-						{/* PRÉNOM */}
-						<div className="">
-							<label htmlFor="firstname">Votre Prénom</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
-							<input
-								type="text"
-								id="password"
-								onChange={(e) => setFirstName(e.target.value)}
-								required
-							/>
-						</div>
-						<div className="BtnCreate">
+						<div className="DeuxBtnMain">
 							{/* <button type="button" onClick={() => {}}>
 							Se connecter
 						</button> */}
-							<button
-								className="CreateCompte"
-								type={"submit"}
-								onClick={handleSubmit}>
-								Creation de Votre Compte
-							</button>
+							<div>
+								<button type={"submit"} onClick={() => {}}>
+									Se connecter
+									{/* <Link className="LinkMain" to="/Principale">
+										Enregistrer
+									</Link> */}
+								</button>
+							</div>
+							<div>
+								<Link className="LinkMain" to="/Register">
+									Enregistrer
+								</Link>
+							</div>
 						</div>
 					</form>
 				</section>
@@ -120,4 +108,4 @@ const Register = () => {
 	);
 };
 
-export default Register;
+export default Login;

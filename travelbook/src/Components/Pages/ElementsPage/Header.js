@@ -1,4 +1,4 @@
-import "./Header.css";
+import "../ElementsPage/CssElements/Header.css";
 import { Search } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 function HeaderMain() {
