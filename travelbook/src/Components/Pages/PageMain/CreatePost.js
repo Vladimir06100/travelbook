@@ -1,9 +1,7 @@
-import { useState } from 'react';
-    
-    function CreatePost(){
-    
+import { useState } from "react";
 
-    const [title, setTitle] = useState("");
+function CreatePost() {
+	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
 	function handleCom(e) {
@@ -30,32 +28,31 @@ import { useState } from 'react';
 				Authorization: `bearer ${token}`,
 			},
 
-                body: JSON.stringify({
-                    title: title,
-                    content: content
-                }),
-            }
-            
-            const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/TravelBook/post", options);
-            
-           await response.json();
-            
+			body: JSON.stringify({
+				title: title,
+				content: content,
+			}),
+		};
 
-            
-        }
+		const response = await fetch(
+			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/post",
+			options
+		);
 
-return(
-    <div className='Createpost'>
-        <form>
-<h2>Whats UP Traveler ?</h2>
-        <input
-							type="text"
-							id="title"
-							onChange={handleCom}
-							required
-                            placeholder=" Titre de votre voyage"
-						/>
-				
+		await response.json();
+	}
+
+	return (
+		<div className="Createpost">
+			<form>
+				<h2>Whats UP Traveler ?</h2>
+				<input
+					type="text"
+					id="title"
+					onChange={handleCom}
+					required
+					placeholder=" Titre de votre voyage"
+				/>
 
 				<input
 					type="text"
@@ -65,15 +62,12 @@ return(
 					placeholder=" Parlez de votre voyage"
 				/>
 
-						<button type={"submit"} onClick={handleSubmit}>
-							Creation Post
-						</button>
-				
-				</form>
-                
-    </div>
-)
-
-    }
+				<button type={"submit"} onClick={handleSubmit}>
+					Creation Post
+				</button>
+			</form>
+		</div>
+	);
+}
 
 export default CreatePost;

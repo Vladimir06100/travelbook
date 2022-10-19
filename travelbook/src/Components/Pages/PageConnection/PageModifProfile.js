@@ -12,20 +12,18 @@ function PageProfil() {
 		ID: "",
 	});
 
-  function lastnameChange(e) {
-    setUser({
-      // sortir user (tableau des donnes) par ... deviser en morceaux   par "," écraser ancien par nouveau valeur et lu renvoyer au server ... 
-      // par button valider (cree une function avec méthode PUT user et ont selection  BODY a utiliser aux choix)
-      ...user,
-      // écraser = mise a jour last name
-      lastname: e.target.value
-  })
-}
+	function lastnameChange(e) {
+		setUser({
+			// sortir user (tableau des donnes) par ... deviser en morceaux   par "," écraser ancien par nouveau valeur et lu renvoyer au server ...
+			// par button valider (cree une function avec méthode PUT user et ont selection  BODY a utiliser aux choix)
+			...user,
+			// écraser = mise a jour last name
+			lastname: e.target.value,
+		});
+	}
 
-  
-  /// méthode PUT ont ajoute body
-  
-  
+	/// méthode PUT ont ajoute body
+
 	async function getProfil() {
 		const token = localStorage.getItem("token");
 		const options = {
@@ -68,7 +66,8 @@ function PageProfil() {
 							<input
 								type="text"
 								placeholder="Select new lastname"
-								value={user.lastname} onChange={lastnameChange}
+								value={user.lastname}
+								onChange={lastnameChange}
 							/>
 						</p>
 						<p>
