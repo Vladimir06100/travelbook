@@ -5,7 +5,7 @@ import PagePrincipale from "./Components/Pages/PageConnection/PagePrincipale";
 import PageErreur from "./Components/Pages/PageConnection/PageErreur";
 
 //import PageErreur from "./Components/Elements/pageErreur";
-//import Profil from "./Components/Pages/PageMain/profil/Profil";
+import PageProfil from "./Components/Pages/PageConnection/PageProfil";
 
 const router = createBrowserRouter([
 	{
@@ -23,11 +23,11 @@ const router = createBrowserRouter([
 		element: <PagePrincipale />,
 		error: <PageErreur />,
 	},
-	/*  {
+	 {
     path: "/profil",
-    element: <Profil/>,
+    element: <PageProfil/>,
     error: <PageErreur />
-  }, */
+  },
 
 
 ]);

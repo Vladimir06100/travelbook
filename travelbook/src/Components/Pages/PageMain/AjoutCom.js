@@ -47,7 +47,7 @@ return(
    <div className="maincontainer">
     <form onSubmit={handleSubmit} className="formular" >
 
-    <textarea classname="commentcontainer"type="text" name="title" ref={inputRef}/>
+    <textarea className="commentcontainer"type="text" name="title" ref={inputRef}/>
     <br></br>
     <button type="submit">envoyer</button>
     </form>

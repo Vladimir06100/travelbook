@@ -1,5 +1,5 @@
 import {useState} from "react";
-import AjoutCom from "../Pages/PageMain/AjoutCom";
+
 
 function PostsTest (props){
 
@@ -36,12 +36,11 @@ const likeUnlike = async ()=>{
         <div>
 
             
-<h1>{props.title}</h1>
-<p>{props.details}</p>
+
 <button onClick={likeUnlike}>{Likes ? <span>💓</span> : <span>❤</span>}</button>
        
 
-            <AjoutCom/>
+          
 
         </div>
 

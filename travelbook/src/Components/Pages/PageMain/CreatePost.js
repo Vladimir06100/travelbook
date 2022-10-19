@@ -40,14 +40,11 @@ import { useState } from 'react';
             
             const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/TravelBook/post", options);
             
-            const data = await response.json();
+           await response.json();
             
-            console.log(data);
 
-            localStorage.setItem(title, content);
             
         }
-        
 
 return(
     <div className='Createpost'>
@@ -77,6 +74,7 @@ return(
 						</button>
 				
 				</form>
+                
     </div>
 )
 
