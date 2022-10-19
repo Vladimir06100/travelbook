@@ -2,7 +2,7 @@ import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./CSSdesPages/PageModifProfile.css";
-import "../PageMainDetails/StyleGeneraleMain.css"
+import "../PageMainDetails/StyleGeneraleMain.css";
 import { useEffect, useState } from "react";
 
 function PageProfil() {
@@ -59,6 +59,8 @@ function PageProfil() {
 		const data = await response.json();
 		console.log(data);
 		console.log(user.email);
+		console.log(user.firstname);
+		console.log(user.lastname);
 	}
 	function lastnameChange(e) {
 		e.preventDefault();

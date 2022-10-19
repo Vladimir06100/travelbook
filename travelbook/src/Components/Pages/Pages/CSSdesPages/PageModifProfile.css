@@ -1,6 +1,16 @@
 .ModifUser {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	margin-bottom: 1rem;
+	padding: 0 auto;
 }
 .ModifUser p {
 	margin: 1rem;
+	color: #ffffff;
+text-shadow: 3px 5px 4px #474747;
+}
+.SetEmail{
+	width: 35vw;
 }
