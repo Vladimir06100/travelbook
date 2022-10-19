@@ -12,16 +12,65 @@ function PageProfil() {
 		ID: "",
 	});
 
-	function lastnameChange(e) {
+	function profilChange(e) {
 		setUser({
 			// sortir user (tableau des donnes) par ... deviser en morceaux   par "," écraser ancien par nouveau valeur et lu renvoyer au server ...
 			// par button valider (cree une function avec méthode PUT user et ont selection  BODY a utiliser aux choix)
 			...user,
 			// écraser = mise a jour last name
 			lastname: e.target.value,
+			firstname: e.target.value,
+			email: e.target.value,
 		});
 	}
 
+	function setNewProfil(e) {
+		async function setProfil() {
+			const token = localStorage.getItem("token");
+			const options = {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `bearer ${token}`,
+				},
+				body: JSON.stringify({
+					email: email,
+					firstname: firstname,
+					lastname: lastname,
+				}),
+			};
+			const response = await fetch(
+				"https://social-network-api.osc-fr1.scalingo.io/TravelBook/user",
+				options
+			);
+			const data = await response.json();
+			const ID = data._id;
+			const firstname = data.firstname;
+			const lastname = data.lastname;
+			const email = data.email;
+			setUser({
+				firstname: firstname,
+				lastname: lastname,
+				email: email,
+				ID: ID,
+			});
+		}
+		/* const data = await response.json();
+			const ID = data._id;
+			const firstname = data.firstname;
+			const lastname = data.lastname;
+			const email = data.email;
+			setUser({
+				firstname: firstname,
+				lastname: lastname,
+				email: email,
+				ID: ID,
+			});
+		}
+		useEffect(() => {
+			setProfil();
+		}, []); */
+	}
 	/// méthode PUT ont ajoute body
 
 	async function getProfil() {
@@ -67,21 +116,31 @@ function PageProfil() {
 								type="text"
 								placeholder="Select new lastname"
 								value={user.lastname}
-								onChange={lastnameChange}
+								onChange={profilChange}
 							/>
 						</p>
 						<p>
-							{" "}
-							Prénom : {user.firstname}{" "}
-							<input type="text" placeholder="Select new firstname" />
+							Prénom :
+							<input
+								type="text"
+								placeholder="Select new fisrtname"
+								value={user.firstname}
+								onChange={profilChange}
+							/>
 						</p>
 						<p>
-							{" "}
-							Email : {user.email}{" "}
-							<input type="text" placeholder="Select new email" />
+							Email :
+							<input
+								type="text"
+								placeholder="Select new email"
+								value={user.email}
+								onChange={profilChange}
+							/>
 						</p>
 					</section>
-					<button className="BtnValider">Valider</button>
+					<button className="BtnValider" onClick={setNewProfil}>
+						Valider
+					</button>
 				</section>
 			</div>
 			<section className="SectionFooter">

@@ -19,7 +19,7 @@ function PostsTest(props) {
 			"https://social-network-api.oscfr1.scalingo.io/TravelBook/post/like",
 			options
 		);
-		const data = await response.json();
+		await response.json();
 
 		setLikes(!Likes);
 	};
