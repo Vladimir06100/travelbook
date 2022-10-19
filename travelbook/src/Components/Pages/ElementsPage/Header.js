@@ -14,6 +14,16 @@ function HeaderMain() {
 			navigate(`/`);
 		}
 	}
+	async function handleClickConnect(e) {
+		e.preventDefault();
+		const token = localStorage.getItem("token");
+
+		if (token) {
+			navigate(`/profil`);
+		} else {
+			alert("Compte n’existe pas!!!");
+		}
+	}
 
 	return (
 		<div className="Header">
@@ -25,6 +35,9 @@ function HeaderMain() {
 				<input placeholder="Recherchez par theme ..." className="SearchInput" />
 			</div>
 			<div>
+				<button className="Connexion" type="submit" onClick={handleClickConnect}>
+					Connexion
+				</button>
 				<button className="Deconnexion" type="submit" onClick={handleClick}>
 					Déconnexion
 				</button>

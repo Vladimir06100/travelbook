@@ -50,7 +50,7 @@ function PageProfil() {
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Votre Profil</h1>
-					<section>
+					<section className="VotreProfil">
 						<p>Nom : {user.lastname} </p>
 						<p> Prénom : {user.firstname} </p>
 						<p> Email : {user.email} </p>
