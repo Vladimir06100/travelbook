@@ -40,7 +40,7 @@ function Posts({ postTitle, postContent, postFirstname, postId, postComment , po
 			<AjoutCom id={postId} />
 
 			<button onClick={handleLike}>
-        Like
+			💓
       </button>
 
 		</div>
