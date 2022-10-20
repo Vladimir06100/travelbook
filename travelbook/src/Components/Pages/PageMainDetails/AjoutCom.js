@@ -1,22 +1,14 @@
 import "./CssDetails/AjoutCom.css";
-import { useReducer, useRef } from "react";
+import { useReducer, useRef, useState } from "react";
 
-
-const AjoutCom = () => {
-	const [postId, setPostid] = useState("");
+const AjoutCom = (props) => {
 	const [content, setContent] = useState("");
 
 	function handleCom(e) {
-		const { id, value } = e.target;
-		if (id === "postId") {
-			setPostid(value);
-		}
-		if (id === "content") {
-			setContent(value);
-		}
+		setContent(e.target.value);
 	}
 
-	async function Comment(){ 
+	async function Comment() {
 		const token = localStorage.getItem("token");
 
 		const options = {
@@ -27,7 +19,7 @@ const AjoutCom = () => {
 			},
 
 			body: JSON.stringify({
-				postId: postId,
+				postId: props.id,
 				content: content,
 			}),
 		};
@@ -36,10 +28,9 @@ const AjoutCom = () => {
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/post/comment",
 			options
 		);
-		console.log("commentas", response)
+		console.log("commentas", response);
 		const data = await response.json();
-		console.log("commentaires", data)
-
+		console.log("commentaires", data);
 	}
 
 	function handleSubmitComment(e) {
@@ -47,7 +38,6 @@ const AjoutCom = () => {
 		Comment();
 	}
 
-	
 	const inputRef = useRef();
 
 	const [comments, dispatch] = useReducer((state = [], action) => {
@@ -77,12 +67,11 @@ const AjoutCom = () => {
 			title: inputRef.current.value,
 		});
 	};
-
 	return (
-		<div className="MainContainer">
-			<form onSubmit={handleSubmit} className="Formular">
+		<div className="maincontainer">
+			<form onSubmit={handleSubmit} className="formular">
 				<textarea
-					className="CommentContainer"
+					className="commentcontainer"
 					type="text"
 					name="title"
 					ref={inputRef}
@@ -90,15 +79,17 @@ const AjoutCom = () => {
 					placeholder="commentez cet article"
 				/>
 				<br></br>
-				<button type="submit" onClick={handleSubmitComment}>envoyer</button>
+				<button type="submit" onClick={handleSubmitComment}>
+					envoyer
+				</button>
 			</form>
-			<div className="Comments">
+			<div className="comments">
 				{comments &&
 					comments.map((comment, index) => (
-						<div className="Comment" key={index}>
+						<div className="comment" key={index}>
 							<button
 								onClick={() => dispatch({ type: "remove_comment", index })}
-								classname="BtnDelete">
+								classname="btndelete">
 								❌
 							</button>
 							<div>
