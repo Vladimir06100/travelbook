@@ -47,6 +47,7 @@ function ViewPosts() {
 					title={posts.title}
 					content={posts.content}
 					firstname={posts.firstname}
+					
 				/>
 			))}
 			<button value={post.post} onChange={AjoutComment}>

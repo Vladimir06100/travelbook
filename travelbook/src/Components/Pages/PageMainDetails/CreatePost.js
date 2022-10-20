@@ -55,7 +55,7 @@ function CreatePost() {
 						id="title"
 						onChange={handleCom}
 						required
-						placeholder="&#127957;Titre de votre Voyage&#127957;"
+						placeholder="                 &#127957;Titre de votre Voyage&#127957;"
 					/>
 
 					<input
