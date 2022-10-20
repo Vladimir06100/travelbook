@@ -1,4 +1,4 @@
-import "./CssDetails/Post.css";
+import "./CssDetails/PostSansLogin.css";
 
 function PostsSansLogin({
 	postTitle,
@@ -27,14 +27,16 @@ function PostsSansLogin({
 		console.log(response.status);
 	}
 	return (
-		<div className="AffichagePost">
-			Titre: {postTitle}
-			Article: {postContent}
-			Nom : {postFirstname}
-			Numéro article : {postId}
-			Commentaires : {postComment}
-			Likes : {postLikes.length}
+		<section className="AfficheSanslogin">
+		<div className="AffichagePosts">
+			<div className="TitrePost">Titre: {postTitle}</div>
+			<div>Article: {postContent}</div>
+			<div>Nom : {postFirstname}</div>
+			<div>Numéro article : {postId}</div>
+			<div>Commentaires : {postComment}</div>
+			<div>Likes : {postLikes.length}</div>
 		</div>
+		</section>
 	);
 }
 export default PostsSansLogin;
