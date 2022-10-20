@@ -28,25 +28,32 @@ function Posts({
 		console.log(response.status);
 	}
 	return (
-		<div className="AffichagePosts">
-			<div>Titre: {postTitle}</div>
-			<div>Article: {postContent}</div>
-			<div>Nom : {postFirstname}</div>
-			<div>Numéro article : {postId}</div>
-			<div>Likes : {postLikes.length}</div>
-			<ul>
-				Liké par :
-				{postLikes.map(function (like) {
-					return (
-						<li>
-							{like.firstname} {like.lastname}
-						</li>
-					);
-				})}
-			</ul>
-			<button onClick={handleLike}>💓</button>
+		<section className="AfficheSanslogin">
+			<div className="AffichagePosts">
+				<div className="TitrePost">Titre: {postTitle}</div>
+				<div className="ArticlePost">Article: {postContent}</div>
+				<div className="NomPost">Nom : {postFirstname}</div>
+				<div className="NumeroPost">Numéro article : {postId}</div>
+				<div className="CommentsPost">Commentaires : {postComment}</div>
+				<div className="LikesPost">
+					&#128151; Likes &#128151; : &#8658; {postLikes.length}
+				</div>
+				<div>
+					<ul className="LikeParPost">
+						Liké par :
+						{postLikes.map(function (like) {
+							return (
+								<li>
+									&#128526; {like.firstname} {like.lastname}
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			<button onClick={handleLike}>&#128151;</button>
 			<AjoutCom id={postId} comment={postComment} />
-		</div>
+			</div>
+		</section>
 	);
 }
 export default Posts;
