@@ -27,10 +27,24 @@ function Posts({ postTitle, postContent, postFirstname, postId, postComment , po
 			Article: {postContent}
 			Nom : {postFirstname}
 			Numéro article : {postId}
-			Commentaires : {postComment}
 			Likes : {postLikes.length}
-			<AjoutCom id={postId} />
-			<button onClick={handleLike}>Like</button>
+			Liké par :
+      <ul>
+        {postLikes.map(function (like) {
+			return (
+				<li>
+              {like.firstname} {like.lastname}
+            </li>
+          );
+        })}
+      </ul>
+
+			<button onClick={handleLike}>
+			💓
+      </button>
+		
+		<AjoutCom id={postId} comment={postComment}/>
+
 		</div>
 	);
 }
