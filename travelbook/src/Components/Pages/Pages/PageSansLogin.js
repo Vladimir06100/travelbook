@@ -1,42 +1,32 @@
-import "./CSSdesPages/PageSansLogin.css";
+import Header from "../ElementsPage/Header";
+import Footer from "../ElementsPage/Footer";
+import Menu from "../ElementsPage/Menu";
+import "./CSSdesPages/PagePrincipale.css";
+import ViewPostsSansLogin from "../PageMainDetails/PageViewSansLogin";
 
-function Post({ postTitle, postContent, postLikes, postId }) {
-	async function handleLike() {
-		const options = {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `bearer `,
-			},
-			body: JSON.stringify({
-				postId: postId,
-			}),
-		};
-		const response = await fetch(
-			"https://social-network-api.osc-fr1.scalingo.io/demo/post/like",
-			options
-		);
-		console.log(response.status);
-	}
-
+const PagePrincipaleSansLogin = () => {
 	return (
-		<article className="ArticleSansLogin">
-			<h2 className="PostTitle">{postTitle}</h2>
-			<p className="PostContent">{postContent}</p>
-			<p className="Likes">Likes: {postLikes.length}</p>
+		<div className="Visuel">
+			<section className="SectionHeader">
+				<Header />
+			</section>
+			<div className="PartieCentre">
+				<section className="SectionMenu">
+					<Menu />
+				</section>
 
-			<p className="DetailLikes">Details likes:</p>
-			<ul>
-				{postLikes.map(function (like) {
-					return (
-						<li className="LiPosts">
-							{like.firstname} {like.lastname}
-						</li>
-					);
-				})}
-			</ul>
-		</article>
+				<section className="SectionMain">
+					<h1>TravelBook</h1>
+					<h1>Page Principale</h1>
+					
+					<ViewPostsSansLogin />
+				</section>
+			</div>
+			<section className="SectionFooter">
+				<Footer />
+			</section>
+		</div>
 	);
-}
+};
 
-export default Post;
+export default PagePrincipaleSansLogin;

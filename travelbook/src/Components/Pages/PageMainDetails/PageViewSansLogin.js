@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import Posts from "./Posts";
-
-function ViewPosts() {
+import PostsSansLogin from "./PostSansLogin";
+function ViewPostsSansLogin() {
 	const [post, setPost] = useState([]);
 	//recuperation Post
 	async function getPost() {
@@ -24,21 +23,12 @@ function ViewPosts() {
 	useEffect(() => {
 		getPost();
 	}, []);
-	async function PutComment() {}
-	function postChange(e) {
-		e.preventDefault();
-		setPost({ ...post, post: e.target.value });
-	}
-	function AjoutComment() {
-		PutComment();
-	}
 
 	return (
 		<div className="FEED">
 			<h1>Mon FEED de Travelers</h1>
-
 			{post.map((posts, index) => (
-				<Posts
+        <PostsSansLogin
 					key={index}
 					index={index}
 					postFirstname={posts.firstname}
@@ -49,10 +39,7 @@ function ViewPosts() {
 					postComment={posts.comment}
 				/>
 			))}
-			<button value={post.post} onChange={AjoutComment}>
-				Ajouter
-			</button>
 		</div>
 	);
 }
-export default ViewPosts;
+export default ViewPostsSansLogin;

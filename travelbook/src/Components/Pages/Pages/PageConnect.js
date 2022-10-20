@@ -36,7 +36,7 @@ const Login = () => {
 		const successMsg = data.success;
 
 		if (successMsg === true) {
-			navigate(`/`);
+			navigate(`/PagePrincipale`);
 			const successMsg = console.log("Connecter!");
 			console.log("Bravo!!!!!!");
 			return successMsg;

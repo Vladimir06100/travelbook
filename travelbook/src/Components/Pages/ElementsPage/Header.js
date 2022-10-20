@@ -1,5 +1,4 @@
 import "../ElementsPage/CssElements/Header.css";
-import { Search } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 function HeaderMain() {
 	const navigate = useNavigate();
@@ -38,8 +37,11 @@ function HeaderMain() {
 				<h1>TravelBooK</h1>
 			</div>
 			<div className="SearchBar">
-				<Search />
-				<input placeholder="Recherchez par theme ..." className="SearchInput" />
+				{/* <Search /> */}
+				<input
+					placeholder="&#9758;Recherchez..."
+					className="SearchInput"
+				/>
 			</div>
 			<div>
 				<button

@@ -2,10 +2,10 @@ import "./CssDetails/AjoutCom.css";
 import { useReducer, useRef, useState } from "react";
 
 const AjoutCom = (props) => {
-	const [content, setContent] = useState("");
+	const [comment, setComment] = useState([]);
 
 	function handleCom(e) {
-		setContent(e.target.value);
+		setComment(e.target.value);
 	}
 
 	async function Comment() {
@@ -20,7 +20,7 @@ const AjoutCom = (props) => {
 
 			body: JSON.stringify({
 				postId: props.id,
-				content: content,
+				content: props.comment,
 			}),
 		};
 
@@ -28,9 +28,7 @@ const AjoutCom = (props) => {
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/post/comment",
 			options
 		);
-		console.log("commentas", response);
-		const data = await response.json();
-		console.log("commentaires", data);
+		console.log(response.status);
 	}
 
 	function handleSubmitComment(e) {
@@ -40,36 +38,10 @@ const AjoutCom = (props) => {
 
 	const inputRef = useRef();
 
-	const [comments, dispatch] = useReducer((state = [], action) => {
-		switch (action.type) {
-			case "add_task": {
-				return [
-					...state,
-					{
-						id: state.length,
-						title: action.title,
-					},
-				];
-			}
-			case "remove_comment": {
-				return state.filter((task, index) => index !== action.index);
-			}
-			default: {
-				return state;
-			}
-		}
-	});
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		dispatch({
-			type: "add_task",
-			title: inputRef.current.value,
-		});
-	};
 	return (
 		<div className="maincontainer">
-			<form onSubmit={handleSubmit} className="formular">
+			<form  className="formular">
 				<textarea
 					className="commentcontainer"
 					type="text"
@@ -78,25 +50,25 @@ const AjoutCom = (props) => {
 					onChange={handleCom}
 					placeholder="commentez cet article"
 				/>
-				<br></br>
+			
 				<button type="submit" onClick={handleSubmitComment}>
-					envoyer
+					Envoyer
 				</button>
 			</form>
+
 			<div className="comments">
-				{comments &&
-					comments.map((comment, index) => (
-						<div className="comment" key={index}>
-							<button
-								onClick={() => dispatch({ type: "remove_comment", index })}
-								classname="btndelete">
-								❌
-							</button>
-							<div>
-								<p>{comment.title}</p>
-							</div>
-						</div>
-					))}
+		 Commentaires :
+
+			<ul>
+         {comment.map(function (comment) {
+          return (
+            <li>
+              {comment.firstname} {comment.lastname}
+            </li>
+          );
+        })}
+      </ul>
+
 			</div>
 		</div>
 	);
