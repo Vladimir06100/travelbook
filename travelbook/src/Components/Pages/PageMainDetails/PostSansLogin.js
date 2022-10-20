@@ -28,14 +28,26 @@ function PostsSansLogin({
 	}
 	return (
 		<section className="AfficheSanslogin">
-		<div className="AffichagePosts">
-			<div className="TitrePost">Titre: {postTitle}</div>
-			<div>Article: {postContent}</div>
-			<div>Nom : {postFirstname}</div>
-			<div>Numéro article : {postId}</div>
-			<div>Commentaires : {postComment}</div>
-			<div>Likes : {postLikes.length}</div>
-		</div>
+			<div className="AffichagePosts">
+				<div className="TitrePost">Titre: {postTitle}</div>
+				<div>Article: {postContent}</div>
+				<div>Nom : {postFirstname}</div>
+				<div>Numéro article : {postId}</div>
+				<div>Commentaires : {postComment}</div>
+				<div>Likes : {postLikes.length}</div>
+				<div>
+					<ul>
+						Liké par :
+						{postLikes.map(function (like) {
+							return (
+								<li>
+									{like.firstname} {like.lastname}
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			</div>
 		</section>
 	);
 }
