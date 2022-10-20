@@ -43,6 +43,7 @@ function ViewPosts() {
 					title={posts.title}
 					content={posts.content}
 					firstname={posts.firstname}
+					likes={posts.likes}
 				/>
 			))}
 		</div>
