@@ -30,18 +30,20 @@ function PostsSansLogin({
 		<section className="AfficheSanslogin">
 			<div className="AffichagePosts">
 				<div className="TitrePost">Titre: {postTitle}</div>
-				<div>Article: {postContent}</div>
-				<div>Nom : {postFirstname}</div>
-				<div>Numéro article : {postId}</div>
-				<div>Commentaires : {postComment}</div>
-				<div>Likes : {postLikes.length}</div>
+				<div className="ArticlePost">Article: {postContent}</div>
+				<div className="NomPost">Nom : {postFirstname}</div>
+				<div className="NumeroPost">Numéro article : {postId}</div>
+				<div className="CommentsPost">Commentaires : {postComment}</div>
+				<div className="LikesPost">
+					&#128151; Likes &#128151; : &#8658;  {postLikes.length}
+				</div>
 				<div>
-					<ul>
+					<ul className="LikeParPost">
 						Liké par :
 						{postLikes.map(function (like) {
 							return (
 								<li>
-									{like.firstname} {like.lastname}
+									&#128526; {like.firstname} {like.lastname}
 								</li>
 							);
 						})}
