@@ -1,15 +1,21 @@
 .Footer {
-	background-image: url("../../Elements/Sans\ titre.png");
+	background-image: url("../../../Elements/ImageFooter.png");
 	background-color: rgb(245, 212, 154);
 	background-size: cover;
 	background-position: center;
 	border: 1px solid black;
 	text-align: center;
-	margin: 1rem 1rem 0;
+	margin-top: 1rem;
+	margin-left: .8rem;
 	padding: 1rem;
 	height: 5vh;
 	width: 95%;
 	border-radius: 5px;
 	box-shadow: 8px 15px 13px 3px rgba(0, 0, 0, 0.8);
 	color: white;
+}
+.Footer h1 {
+	color: rgb(210, 198, 198);
+	text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8,
+		1px 2px 6px rgba(85, 206, 43, 0), 1px 2px 6px rgba(252, 255, 255, 0);
 }

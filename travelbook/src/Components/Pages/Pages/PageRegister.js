@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import "./PageRegister.css";
+import "./CSSdesPages/PageRegister.css";
+import "./CSSdesPages/StyleGeneraleMain.css";
 const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");

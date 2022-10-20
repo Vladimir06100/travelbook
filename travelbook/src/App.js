@@ -1,16 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PageConnect from "./Components/Pages/PageConnection/PageConnect";
-import PageRegister from "./Components/Pages/PageConnection/PageRegister";
-import PagePrincipale from "./Components/Pages/PageConnection/PagePrincipale";
-import PageModifProfile from "./Components/Pages/PageConnection/PageModifProfile";
-import PageErreur from "./Components/Pages/PageConnection/PageErreur";
-
-//import PageErreur from "./Components/Elements/pageErreur";
-import PageProfil from "./Components/Pages/PageConnection/PageProfil";
+import PageConnect from "./Components/Pages/Pages/PageConnect";
+import PageRegister from "./Components/Pages/Pages/PageRegister";
+import PagePrincipale from "./Components/Pages/Pages/PagePrincipale";
+import PageModifProfile from "./Components/Pages/Pages/PageModifProfile";
+import PageErreur from "./Components/Pages/Pages/PageErreur";
+import PageProfil from "./Components/Pages/Pages/PageProfil";
+//import PageSansLogin from "./Components/Pages/Pages/PageSansLogin";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
+		element: <PagePrincipale />,
+		error: <PageErreur />,
+	},
+	{
+		path: "/PageConnect",
 		element: <PageConnect />,
 		error: <PageErreur />,
 	},
@@ -20,12 +24,7 @@ const router = createBrowserRouter([
 		error: <PageErreur />,
 	},
 	{
-		path: "/PagePrincipale",
-		element: <PagePrincipale />,
-		error: <PageErreur />,
-	},
-	{
-		path: "/profil",
+		path: "/Profil",
 		element: <PageProfil />,
 		error: <PageErreur />,
 	},
@@ -36,9 +35,13 @@ const router = createBrowserRouter([
 	},
 ]);
 
+/* 	{
+		path: "/",
+		element: <PageSansLogin />,
+		error: <PageErreur />,
+	}, */
+
 function App() {
-	/* reaction variable d’état token
-creation variable router, je donne mon composant login la fonction de mise a jour de token. */
 	return (
 		<div className="App">
 			<RouterProvider router={router} />

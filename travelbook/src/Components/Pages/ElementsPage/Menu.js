@@ -1,4 +1,4 @@
-import "./Menu.css";
+import "../ElementsPage/CssElements/Menu.css";
 import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 function Menu() {
@@ -19,7 +19,7 @@ function Menu() {
 		const token = localStorage.getItem("token");
 
 		if (token) {
-			navigate(`/PagePrincipale`);
+			navigate(`/`);
 		} else {
 			alert("Veiller vous connecter!!!");
 			navigate(`/`);
