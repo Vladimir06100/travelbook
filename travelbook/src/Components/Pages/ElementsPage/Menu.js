@@ -19,7 +19,7 @@ function Menu() {
 		const token = localStorage.getItem("token");
 
 		if (token) {
-			navigate(`/`);
+			navigate(`/PagePrincipale`);
 		} else {
 			alert("Veiller vous connecter!!!");
 			navigate(`/`);

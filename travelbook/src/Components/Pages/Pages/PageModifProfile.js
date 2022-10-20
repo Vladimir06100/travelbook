@@ -36,7 +36,6 @@ function PageProfil() {
 	useEffect(() => {
 		getProfil();
 	}, []);
-
 	async function PutProfil() {
 		const token = localStorage.getItem("token");
 		const options = {
@@ -55,7 +54,6 @@ function PageProfil() {
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/user",
 			options
 		);
-
 		const data = await response.json();
 		console.log(data);
 		console.log(user.email);
@@ -86,7 +84,6 @@ function PageProfil() {
 	function SubmitInfo() {
 		PutProfil();
 	}
-
 	return (
 		<div className="Visuel">
 			<section className="SectionHeader">
@@ -96,7 +93,6 @@ function PageProfil() {
 				<section className="SectionMenu">
 					<Menu />
 				</section>
-
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Modifier Votre Profil</h1>
@@ -140,5 +136,4 @@ function PageProfil() {
 		</div>
 	);
 }
-
 export default PageProfil;

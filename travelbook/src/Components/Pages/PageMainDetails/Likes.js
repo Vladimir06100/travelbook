@@ -2,7 +2,6 @@ import { useState } from "react";
 function PostsTest(props) {
     const [Likes, setLikes] = useState([{likes: 0}]);
     const likeUnlike = async () => {
-        
         var token = localStorage.getItem("token");
         const options = {
             method: "POST",

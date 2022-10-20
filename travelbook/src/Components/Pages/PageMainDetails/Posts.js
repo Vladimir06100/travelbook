@@ -1,9 +1,7 @@
-import Likes from "./Likes";
 import AjoutCom from "./AjoutCom";
-
+import "./CssDetails/Post.css"
 
 function Posts({ postTitle, postContent, postFirstname, postId, postComment , postLikes}) {
-
 	async function handleLike() {
 		const token = localStorage.getItem("token");
 		const options = {
@@ -23,26 +21,16 @@ function Posts({ postTitle, postContent, postFirstname, postId, postComment , po
 		);
 		console.log(response.status);
 	  }
-
-	  
 	return (
-		<div>
+		<div className="AffichagePost">
 			Titre: {postTitle}
 			Article: {postContent}
 			Nom : {postFirstname}
 			Numéro article : {postId}
 			Commentaires : {postComment}
 			Likes : {postLikes.length}
-		
- 
-
-	
 			<AjoutCom id={postId} />
-
-			<button onClick={handleLike}>
-        Like
-      </button>
-
+			<button onClick={handleLike}>Like</button>
 		</div>
 	);
 }
