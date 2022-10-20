@@ -1,8 +1,8 @@
 import { useState } from "react";
-function PostsTest() {
-    const [Likes, setLikes] = useState(false);
+function PostsTest(props) {
+    const [Likes, setLikes] = useState([{likes: 0}]);
     const likeUnlike = async () => {
-        setLikes(!Likes);
+        
         var token = localStorage.getItem("token");
         const options = {
             method: "POST",
@@ -11,7 +11,7 @@ function PostsTest() {
                 Authorization: `bearer ${token}`,
             },
             body: JSON.stringify({
-                postId: Likes,
+                postId: props.like,
             }),
         };
         const response = await fetch(
@@ -19,6 +19,7 @@ function PostsTest() {
             options
         );
         await response.json();
+        setLikes(Likes);
     };
     return (
         <div>

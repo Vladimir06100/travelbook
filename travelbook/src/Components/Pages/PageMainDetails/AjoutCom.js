@@ -2,10 +2,10 @@ import "./CssDetails/AjoutCom.css";
 import { useReducer, useRef, useState } from "react";
 
 const AjoutCom = (props) => {
-	const [content, setContent] = useState("");
+	const [comment, setComment] = useState("");
 
 	function handleCom(e) {
-		setContent(e.target.value);
+		setComment(e.target.value);
 	}
 
 	async function Comment() {
@@ -20,7 +20,7 @@ const AjoutCom = (props) => {
 
 			body: JSON.stringify({
 				postId: props.id,
-				content: content,
+				content: comment,
 			}),
 		};
 

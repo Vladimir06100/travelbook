@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Posts from "./Posts";
 
 function ViewPosts() {
-	const [post, setPost] = useState([{ title: "", content: "" }]);
+	const [post, setPost] = useState([]);
 	//recuperation Post
 	async function getPost() {
 		localStorage.getItem("token");
@@ -43,10 +43,12 @@ function ViewPosts() {
 				<Posts
 					key={index}
 					index={index}
-					_id={posts._id}
-					title={posts.title}
-					content={posts.content}
-					firstname={posts.firstname}
+					postFirstname={posts.firstname}
+					postTitle={posts.title}
+					postContent={posts.content}
+					postId={posts._id}
+					postLikes={posts.likes}
+					postComment={posts.comment}
 				/>
 			))}
 			<button value={post.post} onChange={AjoutComment}>

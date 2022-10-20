@@ -3,7 +3,7 @@ import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
 import "./CSSdesPages/PagePrincipale.css";
 import CreatePost from "../PageMainDetails/CreatePost";
-import ViewPosts from "../PageMainDetails/ViewPosts";
+import ViewPosts from "../PageMainDetails/PageView";
 
 const PagePrincipale = () => {
 	return (
