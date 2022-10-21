@@ -9,7 +9,7 @@ function ViewPosts() {
 		const options = {
 			method: "GET",
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "application/json"
 			},
 		};
 		const response = await fetch(
