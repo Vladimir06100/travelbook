@@ -1,5 +1,5 @@
 import "./CssDetails/AjoutCom.css";
-import { useReducer, useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const AjoutCom = (props) => {
 	const [comment, setComment] = useState([]);
@@ -29,7 +29,11 @@ const AjoutCom = (props) => {
 			options
 		);
 		console.log(response.status);
+		{setComment(comment)}
 	}
+	useEffect(() => {
+		AjoutCom();
+	}, []);
 
 	function handleSubmitComment(e) {
 		e.preventDefault();
@@ -37,7 +41,7 @@ const AjoutCom = (props) => {
 	}
 
 	const inputRef = useRef();
-
+	
 
 	return (
 		<div className="maincontainer">
@@ -57,18 +61,11 @@ const AjoutCom = (props) => {
 			</form>
 
 			<div className="comments">
-		 Commentaires :
+		commentaire :  {props.comment}
+	
 
-			<ul>
-         {comment.map(function (comment) {
-          return (
-            <li>
-              {comment.firstname} {comment.lastname}
-            </li>
-          );
-        })}
-      </ul>
-
+			
+   
 			</div>
 		</div>
 	);

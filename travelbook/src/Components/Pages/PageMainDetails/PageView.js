@@ -24,14 +24,6 @@ function ViewPosts() {
 	useEffect(() => {
 		getPost();
 	}, []);
-	async function PutComment() {}
-	function postChange(e) {
-		e.preventDefault();
-		setPost({ ...post, post: e.target.value });
-	}
-	function AjoutComment() {
-		PutComment();
-	}
 
 	return (
 		<div className="FEED">
@@ -46,12 +38,10 @@ function ViewPosts() {
 					postContent={posts.content}
 					postId={posts._id}
 					postLikes={posts.likes}
-					postComment={posts.comment}
+					postComment={posts.comments}
 				/>
 			))}
-			<button value={post.post} onChange={AjoutComment}>
-				Ajouter
-			</button>
+	
 		</div>
 	);
 }
