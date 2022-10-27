@@ -31,6 +31,21 @@ function PostsSansLogin({
 						})}
 					</ul>
 				</div>
+				<div>
+					
+				
+				Commentaires :
+			<ul>
+				{postComment.map(function (comment) {
+					return (
+						<li>
+							{comment.firstname} {comment.lastname} a commenté "
+							{comment.content}"
+						</li>
+					);
+				})}
+			</ul>
+	</div>
 			</div>
 		</section>
 	);

@@ -36,7 +36,7 @@ function ViewPostsSansLogin() {
 					postContent={posts.content}
 					postId={posts._id}
 					postLikes={posts.likes}
-					postComment={posts.comment}
+					postComment={posts.comments}
 				/>
 			))}
 		</div>
