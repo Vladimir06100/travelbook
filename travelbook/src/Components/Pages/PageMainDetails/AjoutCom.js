@@ -83,21 +83,8 @@ const AjoutCom = (props) => {
 					envoyer
 				</button>
 			</form>
-			<div className="comments">
-				{comments &&
-					comments.map((comment, index) => (
-						<div className="comment" key={index}>
-							<button
-								onClick={() => dispatch({ type: "remove_comment", index })}
-								classname="btndelete">
-								❌
-							</button>
-							<div>
-								<p>{comment.title}</p>
-							</div>
-						</div>
-					))}
-			</div>
+			
+			
 		</div>
 	);
 };

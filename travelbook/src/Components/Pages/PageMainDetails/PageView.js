@@ -28,11 +28,11 @@ function ViewPosts() {
 	async function PutComment() {}
 
 	function postChange(e) {
-		e.preventDefault();
 		setPost({ ...post, post: e.target.value });
 	}
 	function AjoutComment() {
 		PutComment();
+		
 	}
 
 	return (
@@ -48,7 +48,7 @@ function ViewPosts() {
 					postContent={posts.content}
 					postId={posts._id}
 					postLikes={posts.likes}
-					postComment={posts.comment}
+					postComment={posts.comments}
 				/>
 			))}
 			<button value={post.post} onChange={AjoutComment}>

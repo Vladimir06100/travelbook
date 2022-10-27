@@ -1,4 +1,4 @@
-import Likes from "./Likes";
+import { Comment } from "@mui/icons-material";
 import AjoutCom from "./AjoutCom";
 
 
@@ -31,13 +31,35 @@ function Posts({ postTitle, postContent, postFirstname, postId, postComment , po
 			Article: {postContent}
 			Nom : {postFirstname}
 			Numéro article : {postId}
-			Commentaires : {postComment}
+			Commentaires : 
 			Likes : {postLikes.length}
 		
- 
+			Liké par :
+      <ul>
+        {postLikes.map(function (like) {
+			return (
+				<li>
+              {like.firstname} {like.lastname}
+            </li>
+          );
+        })}
+      </ul>
+
+Commentaires :
+<ul>
+        {postComment.map(function (comment) {
+			return (
+				<li>
+             {comment.firstname} {comment.lastname} a commenté
+			 "{comment.content}" 
+            </li>
+		
+          );
+        })}
+      </ul>
 
 	
-			<AjoutCom id={postId} />
+			<AjoutCom id={postId}  />
 
 			<button onClick={handleLike}>
 			💓
