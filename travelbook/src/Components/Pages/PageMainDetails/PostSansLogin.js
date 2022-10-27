@@ -8,7 +8,6 @@ function PostsSansLogin({
 	postComment,
 	postLikes,
 }) {
-
 	return (
 		<section className="AfficheSanslogin">
 			<div className="AffichagePosts">
@@ -17,7 +16,7 @@ function PostsSansLogin({
 				<div className="NomPost">Nom : {postFirstname}</div>
 				<div className="NumeroPost">Numéro article : {postId}</div>
 				<div className="LikesPost">
-					&#128151; Likes &#128151; : &#8658;  {postLikes.length}
+					&#128151; Likes &#128151; : &#8658; {postLikes.length}
 				</div>
 				<div>
 					<ul className="LikeParPost">
@@ -32,20 +31,18 @@ function PostsSansLogin({
 					</ul>
 				</div>
 				<div>
-					
-				
-				Commentaires :
-			<ul>
-				{postComment.map(function (comment) {
-					return (
-						<li>
-							{comment.firstname} {comment.lastname} a commenté "
-							{comment.content}"
-						</li>
-					);
-				})}
-			</ul>
-	</div>
+					<ul className="ACom">
+						Commentaires :
+						{postComment.map(function (comment) {
+							return (
+								<li>
+									{comment.firstname} {comment.lastname} a commenté "
+									{comment.content}"
+								</li>
+							);
+						})}
+					</ul>
+				</div>
 			</div>
 		</section>
 	);

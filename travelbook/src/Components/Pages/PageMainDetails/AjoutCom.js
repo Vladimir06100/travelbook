@@ -44,15 +44,17 @@ const AjoutCom = (props) => {
 		<div className="maincontainer">
 			<form className="formular">
 				<textarea
-					className="commentcontainer"
+					className="CommentContainer"
 					type="text"
 					name="title"
 					ref={inputRef}
 					onChange={handleCom}
 					placeholder="commentez cet article"
 				/>
-				<br></br>
-				<button type="submit" onClick={handleSubmitComment}>
+				<button
+					className="NewComment"
+					type="submit"
+					onClick={handleSubmitComment}>
 					Envoyer
 				</button>
 			</form>

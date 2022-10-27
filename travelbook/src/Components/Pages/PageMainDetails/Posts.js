@@ -28,14 +28,13 @@ function Posts({
 		console.log(response.status);
 	}
 	return (
-		<div>
+		<div className="Posts">
 			Titre: {postTitle}
 			Article: {postContent}
 			Nom : {postFirstname}
 			Numéro article : {postId}
 			Likes : {postLikes.length}
-		
-			<ul>
+			<ul className="Travelers">
 				Travelers qui aiment votre article :
 				{postLikes.map(function (like) {
 					return (
@@ -44,13 +43,12 @@ function Posts({
 						</li>
 					);
 				})}
-				
 			</ul>
 			Commentaires :
 			<ul>
 				{postComment.map(function (comment) {
 					return (
-						<li>
+						<li className="aCommenter">
 							{comment.firstname} {comment.lastname} a commenté "
 							{comment.content}"
 						</li>
