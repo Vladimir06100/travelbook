@@ -50,6 +50,9 @@ function ViewPosts() {
 					postComment={posts.comments}
 				/>
 			))}
+			<button value={post.post} onChange={AjoutComment}>
+				Ajouter
+			</button>
 		</div>
 	);
 }

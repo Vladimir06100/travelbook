@@ -1,8 +1,8 @@
 import "./CssDetails/AjoutCom.css";
-import { useRef, useState, useEffect } from "react";
+import { useReducer, useRef, useState } from "react";
 
 const AjoutCom = (props) => {
-	const [comment, setComment] = useState([]);
+	const [comment, setComment] = useState("");
 
 	function handleCom(e) {
 		setComment(e.target.value);
@@ -20,7 +20,7 @@ const AjoutCom = (props) => {
 
 			body: JSON.stringify({
 				postId: props.id,
-				content: props.comment,
+				content: comment,
 			}),
 		};
 
@@ -28,14 +28,10 @@ const AjoutCom = (props) => {
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/post/comment",
 			options
 		);
-		console.log(response.status);
-		{
-			setComment(comment);
-		}
+		console.log("commentas", response);
+		const data = await response.json();
+		console.log("commentaires", data);
 	}
-	useEffect(() => {
-		AjoutCom();
-	}, []);
 
 	function handleSubmitComment(e) {
 		e.preventDefault();
@@ -44,9 +40,36 @@ const AjoutCom = (props) => {
 
 	const inputRef = useRef();
 
+	const [comments, dispatch] = useReducer((state = [], action) => {
+		switch (action.type) {
+			case "add_task": {
+				return [
+					...state,
+					{
+						id: state.length,
+						title: action.title,
+					},
+				];
+			}
+			case "remove_comment": {
+				return state.filter((task, index) => index !== action.index);
+			}
+			default: {
+				return state;
+			}
+		}
+	});
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		dispatch({
+			type: "add_task",
+			title: inputRef.current.value,
+		});
+	};
 	return (
 		<div className="maincontainer">
-			<form className="formular">
+			<form onSubmit={handleSubmit} className="formular">
 				<textarea
 					className="commentcontainer"
 					type="text"
@@ -55,9 +78,9 @@ const AjoutCom = (props) => {
 					onChange={handleCom}
 					placeholder="commentez cet article"
 				/>
-
+				<br></br>
 				<button type="submit" onClick={handleSubmitComment}>
-					Envoyer
+					envoyer
 				</button>
 			</form>
 		</div>
