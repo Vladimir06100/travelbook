@@ -1,5 +1,5 @@
 import "./CssDetails/AjoutCom.css";
-import { useReducer, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const AjoutCom = (props) => {
 	const [comment, setComment] = useState("");
@@ -40,36 +40,9 @@ const AjoutCom = (props) => {
 
 	const inputRef = useRef();
 
-	const [comments, dispatch] = useReducer((state = [], action) => {
-		switch (action.type) {
-			case "add_task": {
-				return [
-					...state,
-					{
-						id: state.length,
-						title: action.title,
-					},
-				];
-			}
-			case "remove_comment": {
-				return state.filter((task, index) => index !== action.index);
-			}
-			default: {
-				return state;
-			}
-		}
-	});
-
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		dispatch({
-			type: "add_task",
-			title: inputRef.current.value,
-		});
-	};
 	return (
 		<div className="maincontainer">
-			<form onSubmit={handleSubmit} className="formular">
+			<form className="formular">
 				<textarea
 					className="commentcontainer"
 					type="text"
@@ -80,7 +53,7 @@ const AjoutCom = (props) => {
 				/>
 				<br></br>
 				<button type="submit" onClick={handleSubmitComment}>
-					envoyer
+					Envoyer
 				</button>
 			</form>
 		</div>

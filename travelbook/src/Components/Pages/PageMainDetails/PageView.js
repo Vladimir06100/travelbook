@@ -25,15 +25,6 @@ function ViewPosts() {
 		getPost();
 	}, []);
 
-	async function PutComment() {}
-
-	function postChange(e) {
-		setPost({ ...post, post: e.target.value });
-	}
-	function AjoutComment() {
-		PutComment();
-	}
-
 	return (
 		<div className="FEED">
 			<h1>Mon FEED de Travelers</h1>
@@ -50,9 +41,7 @@ function ViewPosts() {
 					postComment={posts.comments}
 				/>
 			))}
-			<button value={post.post} onChange={AjoutComment}>
-				Ajouter
-			</button>
+	
 		</div>
 	);
 }

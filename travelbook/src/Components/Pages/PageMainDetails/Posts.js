@@ -1,4 +1,3 @@
-import { Comment } from "@mui/icons-material";
 import AjoutCom from "./AjoutCom";
 import "./CssDetails/Post.css";
 
@@ -34,9 +33,10 @@ function Posts({
 			Article: {postContent}
 			Nom : {postFirstname}
 			Numéro article : {postId}
-			Commentaires : Likes : {postLikes.length}
-			Liké par :
+			Likes : {postLikes.length}
+		
 			<ul>
+				Travelers qui aiment votre article :
 				{postLikes.map(function (like) {
 					return (
 						<li>
@@ -44,6 +44,7 @@ function Posts({
 						</li>
 					);
 				})}
+				
 			</ul>
 			Commentaires :
 			<ul>
