@@ -50,6 +50,7 @@ const AjoutCom = (props) => {
 					onChange={handleCom}
 					placeholder="commentez cet article"
 				/>
+				<br />
 				<button
 					className="NewComment"
 					type="submit"

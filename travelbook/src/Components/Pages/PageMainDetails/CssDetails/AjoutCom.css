@@ -8,13 +8,12 @@
 
 .InputBox {
 	height: 1rem;
-	width: 350px;
 	background-color: white;
 }
 
 .CommentContainer {
 	height: 1rem;
-	width: 30rem;
+	width: 80%;
 	background-color: rgb(211, 246, 252);
 	word-break: break-all;
 	margin: 10px 0;

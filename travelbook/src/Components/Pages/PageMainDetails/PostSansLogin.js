@@ -13,7 +13,7 @@ function PostsSansLogin({
 			<div className="AffichagePosts">
 				<div className="TitrePost">Titre: {postTitle}</div>
 				<div className="ArticlePost">Article: {postContent}</div>
-				<div className="NomPost">Nom : {postFirstname}</div>
+				<div className="NomPost">Createur : {postFirstname}</div>
 				<div className="NumeroPost">Numéro article : {postId}</div>
 				<div className="LikesPost">
 					&#128151; Likes &#128151; : &#8658; {postLikes.length}

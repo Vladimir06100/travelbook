@@ -1,5 +1,5 @@
 .AfficheSanslogin {
-	color: aliceblue;
+	color: rgb(216, 233, 248);
 }
 .AffichagePosts {
 	flex-direction: column;
@@ -13,10 +13,29 @@
 	margin: 1rem;
 	color: white;
 	padding: 1rem;
-	width: 50%;
+	width: 60%;
 }
 .AfficheSanslogin {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.BtnLike {
+	font-family: Arial;
+	padding: 0rem;
+	margin: 0.2rem;
+	margin-bottom: 1rem;
+	border-width: 1px;
+	color: #3a8a9e;
+	border-color: #d6bcd6;
+	font-weight: italic;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	box-shadow: 3px 4px 6px 0px #899599;
+	text-shadow: 2px 2px 4px #e1e2ed;
+	background: linear-gradient(rgba(233, 218, 218, 1), #bab1ba);
+}
+.BtnLike:hover {
+	background: linear-gradient(#bab1ba, rgba(233, 218, 218, 1));
 }

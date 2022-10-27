@@ -1,12 +1,5 @@
 /* direction PostSansLogin */
-.ArticleSansLogin {
-	-webkit-box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.64);
-	box-shadow: inset 2px 2px 15px 5px rgba(0, 0, 0, 0.64);
-	background-color: #1c6ea4;
-	color: #fff;
-	background-color: rgba(179, 175, 175, 0.269);
-	padding-bottom: 0.3rem;
-}
+
 .LiPosts {
 	text-decoration: none;
 }

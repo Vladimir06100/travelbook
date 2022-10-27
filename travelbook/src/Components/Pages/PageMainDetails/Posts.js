@@ -28,36 +28,42 @@ function Posts({
 		console.log(response.status);
 	}
 	return (
-		<div className="Posts">
-			Titre: {postTitle}
-			Article: {postContent}
-			Nom : {postFirstname}
-			Numéro article : {postId}
-			Likes : {postLikes.length}
-			<ul className="Travelers">
-				Travelers qui aiment votre article :
-				{postLikes.map(function (like) {
-					return (
-						<li>
-							{like.firstname} {like.lastname}
-						</li>
-					);
-				})}
-			</ul>
-			Commentaires :
-			<ul>
-				{postComment.map(function (comment) {
-					return (
-						<li className="aCommenter">
-							{comment.firstname} {comment.lastname} a commenté "
-							{comment.content}"
-						</li>
-					);
-				})}
-			</ul>
-			<AjoutCom id={postId} />
-			<button onClick={handleLike}>💓</button>
-		</div>
+		<section className="AfficheSanslogin">
+			<div className="AffichagePosts">
+				<div className="TitrePost">Titre: {postTitle}</div>
+				<div className="Article">Article: {postContent}</div>
+				<div className="Createur">Createur : {postFirstname}</div>
+				<div className="NumeroPost">Numéro article : {postId}</div>
+				<div className="TitrePost">
+					&#128151; Likes &#128151; : {postLikes.length}
+				</div>
+				<ul className="Travelers">
+					Travelers qui aiment votre article :
+					{postLikes.map(function (like) {
+						return (
+							<li>
+								{like.firstname} {like.lastname}
+							</li>
+						);
+					})}
+				</ul>
+				<ul>
+					Commentaires :
+					{postComment.map(function (comment) {
+						return (
+							<li className="ACommenter">
+								{comment.firstname} {comment.lastname} a commenté "
+								{comment.content}"
+							</li>
+						);
+					})}
+				</ul>
+				<AjoutCom id={postId} />
+				<button className="BtnLike" onClick={handleLike}>
+					💓
+				</button>
+			</div>
+		</section>
 	);
 }
 export default Posts;
