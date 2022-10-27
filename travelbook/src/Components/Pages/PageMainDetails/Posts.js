@@ -34,7 +34,7 @@ function Posts({
 				<div className="Article">Article: {postContent}</div>
 				<div className="Createur">Createur : {postFirstname}</div>
 				<div className="NumeroPost">Numéro article : {postId}</div>
-				<div className="TitrePost">
+				<div className="LikesPost">
 					&#128151; Likes &#128151; : {postLikes.length}
 				</div>
 				<ul className="Travelers">
