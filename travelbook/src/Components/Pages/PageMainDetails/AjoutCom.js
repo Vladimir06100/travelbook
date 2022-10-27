@@ -33,8 +33,7 @@ const AjoutCom = (props) => {
 		console.log("commentaires", data);
 	}
 
-	function handleSubmitComment(e) {
-		e.preventDefault();
+	function handleSubmitComment() {
 		Comment();
 	}
 
