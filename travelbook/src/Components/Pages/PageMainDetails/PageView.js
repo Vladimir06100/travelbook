@@ -9,7 +9,7 @@ function ViewPosts() {
 		const options = {
 			method: "GET",
 			headers: {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
 			},
 		};
 		const response = await fetch(
@@ -24,6 +24,15 @@ function ViewPosts() {
 	useEffect(() => {
 		getPost();
 	}, []);
+
+	async function PutComment() {}
+
+	function postChange(e) {
+		setPost({ ...post, post: e.target.value });
+	}
+	function AjoutComment() {
+		PutComment();
+	}
 
 	return (
 		<div className="FEED">
@@ -41,7 +50,6 @@ function ViewPosts() {
 					postComment={posts.comments}
 				/>
 			))}
-	
 		</div>
 	);
 }

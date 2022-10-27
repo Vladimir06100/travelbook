@@ -1,3 +1,4 @@
+import { Comment } from "@mui/icons-material";
 import AjoutCom from "./AjoutCom";
 import "./CssDetails/Post.css";
 
@@ -28,32 +29,36 @@ function Posts({
 		console.log(response.status);
 	}
 	return (
-		<section className="AfficheSanslogin">
-			<div className="AffichagePosts">
-				<div className="TitrePost">Titre: {postTitle}</div>
-				<div className="ArticlePost">Article: {postContent}</div>
-				<div className="NomPost">Nom : {postFirstname}</div>
-				<div className="NumeroPost">Numéro article : {postId}</div>
-				<div className="CommentsPost">Commentaires : {postComment}</div>
-				<div className="LikesPost">
-					&#128151; Likes &#128151; : &#8658; {postLikes.length}
-				</div>
-				<div>
-					<ul className="LikeParPost">
-						Liké par :
-						{postLikes.map(function (like) {
-							return (
-								<li>
-									&#128526; {like.firstname} {like.lastname}
-								</li>
-							);
-						})}
-					</ul>
-				</div>
-			<button onClick={handleLike}>&#128151;</button>
-			<AjoutCom id={postId} comment={postComment} />
-			</div>
-		</section>
+		<div>
+			Titre: {postTitle}
+			Article: {postContent}
+			Nom : {postFirstname}
+			Numéro article : {postId}
+			Commentaires : Likes : {postLikes.length}
+			Liké par :
+			<ul>
+				{postLikes.map(function (like) {
+					return (
+						<li>
+							{like.firstname} {like.lastname}
+						</li>
+					);
+				})}
+			</ul>
+			Commentaires :
+			<ul>
+				{postComment.map(function (comment) {
+					return (
+						<li>
+							{comment.firstname} {comment.lastname} a commenté "
+							{comment.content}"
+						</li>
+					);
+				})}
+			</ul>
+			<AjoutCom id={postId} />
+			<button onClick={handleLike}>💓</button>
+		</div>
 	);
 }
 export default Posts;

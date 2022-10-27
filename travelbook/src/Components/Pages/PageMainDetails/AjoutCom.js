@@ -29,7 +29,9 @@ const AjoutCom = (props) => {
 			options
 		);
 		console.log(response.status);
-		{setComment(comment)}
+		{
+			setComment(comment);
+		}
 	}
 	useEffect(() => {
 		AjoutCom();
@@ -41,11 +43,10 @@ const AjoutCom = (props) => {
 	}
 
 	const inputRef = useRef();
-	
 
 	return (
 		<div className="maincontainer">
-			<form  className="formular">
+			<form className="formular">
 				<textarea
 					className="commentcontainer"
 					type="text"
@@ -54,19 +55,11 @@ const AjoutCom = (props) => {
 					onChange={handleCom}
 					placeholder="commentez cet article"
 				/>
-			
+
 				<button type="submit" onClick={handleSubmitComment}>
 					Envoyer
 				</button>
 			</form>
-
-			<div className="comments">
-		commentaire :  {props.comment}
-	
-
-			
-   
-			</div>
 		</div>
 	);
 };
