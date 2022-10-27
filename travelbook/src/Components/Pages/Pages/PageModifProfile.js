@@ -12,7 +12,6 @@ function PageProfil() {
 		email: "",
 		ID: "",
 	});
-
 	async function getProfil() {
 		const token = localStorage.getItem("token");
 		const options = {

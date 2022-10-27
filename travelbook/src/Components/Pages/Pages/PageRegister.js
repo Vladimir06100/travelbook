@@ -11,9 +11,6 @@ const Register = () => {
 	const [firstname, setFirstName] = useState("");
 	const [lastname, setLastName] = useState("");
 	const navigate = useNavigate();
-	//   const history = useHistory();
-
-	// остановка обновления страницы
 	async function handleSubmit(e) {
 		e.preventDefault();
 		const options = {
@@ -28,14 +25,12 @@ const Register = () => {
 				lastname: lastname,
 			}),
 		};
-
 		const response = await fetch(
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/register",
 			options
 		);
 		console.log(response);
 		localStorage.setItem(email, password);
-
 		if (response.ok) {
 			navigate(`/`);
 			const successMsg = alert("User registered successfully!");
@@ -70,7 +65,6 @@ const Register = () => {
 						{/* Mot de PASSE */}
 						<div className="">
 							<label htmlFor="password">Votre Pass</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
 								type="password"
 								id="password"
@@ -81,7 +75,6 @@ const Register = () => {
 						{/* NOM  */}
 						<div className="">
 							<label htmlFor="lastname">Votre Nom</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
 								type="text"
 								id="password"
@@ -92,7 +85,6 @@ const Register = () => {
 						{/* PRÉNOM */}
 						<div className="">
 							<label htmlFor="firstname">Votre Prénom</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
 								type="text"
 								id="password"
@@ -101,9 +93,6 @@ const Register = () => {
 							/>
 						</div>
 						<div className="BtnCreate">
-							{/* <button type="button" onClick={() => {}}>
-							Se connecter
-						</button> */}
 							<button
 								className="CreateCompte"
 								type={"submit"}
@@ -120,5 +109,4 @@ const Register = () => {
 		</div>
 	);
 };
-
 export default Register;

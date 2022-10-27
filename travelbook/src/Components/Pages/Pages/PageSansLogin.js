@@ -14,11 +14,9 @@ const PagePrincipaleSansLogin = () => {
 				<section className="SectionMenu">
 					<Menu />
 				</section>
-
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Page Principale</h1>
-					
 					<ViewPostsSansLogin />
 				</section>
 			</div>
@@ -28,5 +26,4 @@ const PagePrincipaleSansLogin = () => {
 		</div>
 	);
 };
-
 export default PagePrincipaleSansLogin;

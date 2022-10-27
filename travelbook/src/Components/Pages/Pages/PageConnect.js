@@ -6,13 +6,10 @@ import Menu from "../ElementsPage/Menu";
 import { useNavigate } from "react-router-dom";
 import "./CSSdesPages/PageConnect.css";
 import "./CSSdesPages/StyleGeneraleMain.css";
-
 const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
-
-	// остановка обновления страницы
 	async function handleSubmit(e) {
 		e.preventDefault();
 		const options = {
@@ -25,7 +22,6 @@ const Login = () => {
 				password: password,
 			}),
 		};
-
 		const response = await fetch(
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/login",
 			options
@@ -34,7 +30,6 @@ const Login = () => {
 		const data = await response.json();
 		localStorage.setItem("token", data.token);
 		const successMsg = data.success;
-
 		if (successMsg === true) {
 			navigate(`/PagePrincipale`);
 			const successMsg = console.log("Connecter!");
@@ -46,7 +41,6 @@ const Login = () => {
 			);
 		}
 	}
-
 	return (
 		<div className="Visuel">
 			<section className="SectionHeader">
@@ -56,7 +50,6 @@ const Login = () => {
 				<section className="SectionMenu">
 					<Menu />
 				</section>
-
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Connecter Vous</h1>
@@ -72,7 +65,6 @@ const Login = () => {
 						</div>
 						<div>
 							<label htmlFor="password">Votre Pass</label>
-							{/* поменять потом способ текст на пароль чтобы спрятать данные */}
 							<input
 								type="password"
 								id="password"
@@ -81,9 +73,6 @@ const Login = () => {
 							/>
 						</div>
 						<div className="DeuxBtnMain">
-							{/* <button type="button" onClick={() => {}}>
-							Se connecter
-						</button> */}
 							<div>
 								<button type={"submit"} onClick={() => {}}>
 									Se connecter

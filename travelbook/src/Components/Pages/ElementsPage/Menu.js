@@ -41,8 +41,4 @@ function Menu() {
 		</div>
 	);
 }
-
-//	<Link to="/pagemain">Accueil</Link>
-//	<Link to="/profil">Mon profil</Link>
-
 export default Menu;

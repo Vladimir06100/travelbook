@@ -4,7 +4,6 @@ import "./CssDetails/CreatePost.css";
 function CreatePost() {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
-
 	function handleCom(e) {
 		const { id, value } = e.target;
 		if (id === "post") {
@@ -14,34 +13,28 @@ function CreatePost() {
 			setTitle(value);
 		}
 	}
-
 	function handleSubmit() {
 		Create();
 	}
 	async function Create() {
 		const token = localStorage.getItem("token");
-
 		const options = {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 				Authorization: `bearer ${token}`,
 			},
-
 			body: JSON.stringify({
 				title: title,
 				content: content,
 			}),
 		};
-
 		const response = await fetch(
 			"https://social-network-api.osc-fr1.scalingo.io/TravelBook/post",
 			options
 		);
-
 		await response.json();
 	}
-
 	return (
 		<div className="CreatePost">
 			<form>
@@ -55,7 +48,6 @@ function CreatePost() {
 						required
 						placeholder="&#127957;Titre de votre Voyage&#127957;"
 					/>
-
 					<input
 						className="InputDetail"
 						type="text"

@@ -1,5 +1,4 @@
 import "./CssDetails/PostSansLogin.css";
-
 function PostsSansLogin({
 	postTitle,
 	postContent,

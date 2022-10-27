@@ -1,6 +1,5 @@
 import AjoutCom from "./AjoutCom";
 import "./CssDetails/Post.css";
-
 function Posts({
 	postTitle,
 	postContent,

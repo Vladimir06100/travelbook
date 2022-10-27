@@ -24,7 +24,6 @@ function ViewPosts() {
 	useEffect(() => {
 		getPost();
 	}, []);
-
 	return (
 		<div className="FEED">
 			<h1>Mon FEED de Travelers</h1>
@@ -41,7 +40,6 @@ function ViewPosts() {
 					postComment={posts.comments}
 				/>
 			))}
-	
 		</div>
 	);
 }

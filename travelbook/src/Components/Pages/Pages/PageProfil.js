@@ -6,7 +6,6 @@ import "./CSSdesPages/StyleGeneraleMain.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 function PageProfil() {
 	const [user, setUser] = useState({
 		firstname: "",
@@ -46,7 +45,6 @@ function PageProfil() {
 				<section className="SectionMenu">
 					<Menu />
 				</section>
-
 				<section className="SectionMain">
 					<h1>TravelBook</h1>
 					<h1>Votre Profil</h1>

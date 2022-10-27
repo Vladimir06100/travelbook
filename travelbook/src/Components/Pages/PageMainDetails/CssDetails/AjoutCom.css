@@ -5,12 +5,10 @@
 	align-items: center;
 	margin-top: 10px;
 }
-
 .InputBox {
 	height: 1rem;
 	background-color: white;
 }
-
 .CommentContainer {
 	height: 1rem;
 	width: 80%;

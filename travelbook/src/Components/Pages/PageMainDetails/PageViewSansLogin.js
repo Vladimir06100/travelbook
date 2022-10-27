@@ -23,12 +23,11 @@ function ViewPostsSansLogin() {
 	useEffect(() => {
 		getPost();
 	}, []);
-
 	return (
 		<div className="FEED">
 			<h1>Mon FEED de Travelers</h1>
 			{post.map((posts, index) => (
-        <PostsSansLogin
+				<PostsSansLogin
 					key={index}
 					index={index}
 					postFirstname={posts.firstname}

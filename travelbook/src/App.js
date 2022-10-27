@@ -39,13 +39,6 @@ const router = createBrowserRouter([
 		error: <PageErreur />,
 	},
 ]);
-
-/* 	{
-		path: "/",
-		element: <PageSansLogin />,
-		error: <PageErreur />,
-	}, */
-
 function App() {
 	return (
 		<div className="App">

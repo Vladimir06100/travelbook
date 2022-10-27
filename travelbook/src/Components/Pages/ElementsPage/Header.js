@@ -6,7 +6,6 @@ function HeaderMain() {
 	async function handleClick(e) {
 		e.preventDefault();
 		const deco = localStorage.getItem("token");
-
 		if (deco) {
 			localStorage.clear("token");
 			alert("Merci et a bientôt!!!");
@@ -23,7 +22,6 @@ function HeaderMain() {
 			alert("Compte n’existe pas!!!");
 		}
 	}
-
 	return (
 		<div className="Header">
 			<div className="Absolute">
@@ -38,10 +36,7 @@ function HeaderMain() {
 			</div>
 			<div className="SearchBar">
 				{/* <Search /> */}
-				<input
-					placeholder="&#9758;Recherchez..."
-					className="SearchInput"
-				/>
+				<input placeholder="&#9758;Recherchez..." className="SearchInput" />
 			</div>
 			<div>
 				<button

@@ -29,5 +29,4 @@ const PagePrincipale = () => {
 		</div>
 	);
 };
-
 export default PagePrincipale;
