@@ -15,8 +15,7 @@ function CreatePost() {
 		}
 	}
 
-	function handleSubmit(e) {
-		e.preventDefault();
+	function handleSubmit() {
 		Create();
 	}
 	async function Create() {
