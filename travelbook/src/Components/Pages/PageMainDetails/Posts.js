@@ -1,4 +1,3 @@
-import { Comment } from "@mui/icons-material";
 import AjoutCom from "./AjoutCom";
 import "./CssDetails/Post.css";
 
