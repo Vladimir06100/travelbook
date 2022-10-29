@@ -1,6 +1,5 @@
 import "../ElementsPage/CssElements/Menu.css";
 import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
 function Menu() {
 	const navigate = useNavigate();
 
@@ -33,6 +32,7 @@ function Menu() {
 					<button type="submit" onClick={handleClickAccueil}>
 						Accueil
 					</button>
+
 					<button type="submit" onClick={handleClick}>
 						Profil
 					</button>
