@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../ElementsPage/Header";
 import Footer from "../ElementsPage/Footer";
 import Menu from "../ElementsPage/Menu";
-import { useNavigate } from "react-router-dom";
 import "./CSSdesPages/PageConnect.css";
 import "./CSSdesPages/StyleGeneraleMain.css";
 const Login = () => {
@@ -41,6 +40,7 @@ const Login = () => {
 			);
 		}
 	}
+
 	return (
 		<div className="Visuel">
 			<section className="SectionHeader">
