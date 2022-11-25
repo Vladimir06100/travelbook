@@ -1,0 +1,23 @@
+.LinkModif {
+	text-decoration: none;
+	font: inherit;
+	background-color: antiquewhite;
+	padding: 0.5rem 2rem;
+	border-radius: 5px;
+	border: 1px solid white;
+	cursor: pointer;
+	color: rgb(78, 70, 70);
+}
+.LinkModif:hover {
+	background-color: rgb(204, 190, 171);
+	border-color: beige;
+}
+.DivLinkModif {
+	margin: 2rem;
+}
+
+.VotreProfil p {
+	margin: 1rem;
+	color: #ffffff;
+text-shadow: 3px 5px 4px #474747;
+}

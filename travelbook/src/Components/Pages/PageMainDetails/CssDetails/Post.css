@@ -1,0 +1,40 @@
+.AfficheSanslogin {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.AffichagePosts {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(128, 128, 128, 0.403);
+	-webkit-box-shadow: inset 5px 5px 15px 5px #000000;
+	box-shadow: inset 5px 5px 15px 5px #000000;
+	border-radius: 0px 31px 0px 21px;
+	height: auto;
+	margin: 1rem;
+	color: white;
+	padding: 1rem;
+	width: 50%;
+}
+.AffichagePosts div {
+	margin: 0.4rem;
+	padding: 0.2rem;
+}
+.TitrePost {
+	color: #ffffff;
+	font-size: 1.5rem;
+	text-shadow: 3px 5px 4px #474747;
+}
+
+.ArticlePost,
+.NomPost,
+.NumeroPost,
+.LikesPost,
+.LikeParPost,
+.Createur,
+.Article,
+.LikesPost {
+	color: #ffffff;
+	text-shadow: 3px 5px 4px #474747;
+}
